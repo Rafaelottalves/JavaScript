@@ -8,20 +8,17 @@
     <style>
         body {
             font: normal 1.2rem Arial;
-            color: #f1f1f1;
-            background-color: #161515;
         }
     </style>
-
-    <title>Meu segundo programa</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Olá, Mundo!</h1>
-    <p>Ja me livrei da maldição</p>
 
     <script>
-        var nome = window.prompt('Qual é o seu nome?')
-        window.alert('É um grande prazer em te conhecer, ' + nome + '!')
+        var nome = window.prompt('Qual é o seu nome? ')
+        document.write(`Olá, ${nome}! Seu nome tem ${nome.length} letras. <br>`)
+        document.write(`Seu nome em maiusculas é ${nome.toUpperCase()} <br>`)
+        document.write(`Seu nome em minusculas é ${nome.toLowerCase()}`)
     </script>
 </body>
 </html>
