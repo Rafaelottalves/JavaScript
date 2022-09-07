@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input#txtn1, input#txtn2 {
+            width: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="txtn1"> +
+    <input style="display: inline;" type="number" id="txtn2"> =
+
+    <div id="res" style="display: inline-block;">
+
+    </div>
+
+    <input style="margin-top: 8px; display: block;" type="button" value="Somar" onclick="soma()">
+
+    <script>
+        function soma() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var r = n1 + n2
+
+            res.innerHTML = `${r}`
+        }
+    </script>
+</body>
+</html>
