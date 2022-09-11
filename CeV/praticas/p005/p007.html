@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Quantas maçãs foram comprada?</p>
+
+    <input type="number" id="maçãs">
+
+    <input type="button" value="Calcular Preço" onclick="calcular()">
+
+    <div id="preco">
+
+    </div>
+
+    <script>
+        function calcular() {
+            var quantMaçãs = document.getElementById('maçãs')
+            var quant = Number(quantMaçãs.value)
+
+            if (quant < 12) {
+                var preçoGeral = quant * 0.30
+                preco.innerHTML = `<p>${preçoGeral.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>`
+            } else {
+                var preçoGeral = quant * 0.25
+                preco.innerHTML = `<p>${preçoGeral.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>`
+            }
+        }
+    </script>
+</body>
+</html>

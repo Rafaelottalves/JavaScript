@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="number" id="num1"></div> <br>
+    <div><input type="number" id="num2"></div> <br>
+    <div><input type="number" id="num3"></div> <br>
+
+    <input type="button" value="Ordem" onclick="ordenar()">
+
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+
+    <script>
+        function ordenar() {
+            var nm1 = document.getElementById('num1')
+            var nm2 = document.getElementById('num2')
+            var nm3 = document.getElementById('num3')
+
+            var n1 = Number(nm1.value)
+            var n2 = Number(nm2.value)
+            var n3 = Number(nm3.value)
+
+            var txt1 = document.getElementById('first')
+            var txt2 = document.getElementById('second')
+            var txt3 = document.getElementById('third')
+
+            if (n1 > n2 && n2 > n3) {
+                txt1.innerHTML = `${n1}`
+                txt2.innerHTML = `${n2}`
+                txt3.innerHTML = `${n3}`
+            }
+
+            if (n2 > n1 && n1 > n3) {
+                txt1.innerHTML = `${n2}`
+                txt2.innerHTML = `${n1}`
+                txt3.innerHTML = `${n3}`
+            }
+
+            if (n3 > n2 && n2 > n1) {
+                txt1.innerHTML = `${n3}`
+                txt2.innerHTML = `${n2}`
+                txt3.innerHTML = `${n1}`
+            }
+
+            if (n3 > n1 && n1 > n2) {
+                txt1.innerHTML = `${n3}`
+                txt2.innerHTML = `${n1}`
+                txt3.innerHTML = `${n2}`
+            }
+
+            if (n2 > n1 && n3 > n1) {
+                txt1.innerHTML = `${n2}`
+                txt2.innerHTML = `${n3}`
+                txt3.innerHTML = `${n1}`
+            }
+        }
+    </script>
+</body>
+</html>

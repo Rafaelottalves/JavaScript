@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lado 1 do triangulo: <input type="number" id="ld1"></p>
+    <p>Lado 2 do triangulo: <input type="number" id="ld2"></p>
+    <p>Lado 3 do triangulo: <input type="number" id="ld3"></p>
+
+    <input type="button" value="Tipo" onclick="tipo()">
+
+    <p id="txt">O triangulo é: </p>
+
+    <input type="button" value="Limpar Resposta" onclick="limpar()">
+
+    <script>
+        var txt = document.getElementById('txt')
+
+        function tipo() {
+            var lado1 = document.getElementById('ld1')
+            var lado2 = document.getElementById('ld2')
+            var lado3 = document.getElementById('ld3')
+
+            var l1 = Number(lado1.value)
+            var l2 = Number(lado2.value)
+            var l3 = Number(lado3.value)
+
+            if (l1 === l2 && l2 === l3) {
+                txt.innerHTML += 'Equilatero'
+            }
+
+            if (l1 !== l2 && l2 !== l3) {
+                txt.innerHTML += 'Escaleno'
+            }
+
+            if (l1 === l2 && l1 !== l3 || l2 === l3 && l2 !== l1 || l3 === l1 && l3 !== l2) {
+                txt.innerHTML += 'Isósceles'
+            }
+        }
+
+        function limpar() {
+            txt.innerHTML = 'O triangulo é: '
+        }
+    </script>
+</body>
+</html>

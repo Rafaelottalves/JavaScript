@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="body">
+    <h1>Hora do Dia</h1>
+
+    <div class="container-painel">
+        <p id="horas"></p>
+
+        <div id="img-wrapper"></div>
+    </div>
+
+    <a href="#">@rafaelottalves</a>
+
+    <script>
+        var dataInfo = new Date()
+        var horaAtual = dataInfo.getHours()
+
+        var horaInfo = document.getElementById('horas')
+
+        horaInfo.innerHTML = `Agora são ${horaAtual} horas.`
+
+        var corpo = document.getElementById('body')
+        var img = document.getElementById('img-wrapper')
+
+        if (horaAtual > 12) {
+            corpo.style.background = 'gray'
+            img.style.backgroundImage = 'url(img/sea.jpg)'
+        }
+
+        if (horaAtual > 18) {
+            corpo.style.background = 'darkred'
+            img.style.backgroundImage = 'url(img/floresta.jpg)'
+        }
+    </script>
+</body>
+</html>

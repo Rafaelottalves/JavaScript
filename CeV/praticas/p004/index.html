@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div > input {
+            width: 50px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Notas</h1>
+
+    <div><input type="number" id="nota1"></div> <br>
+    <div><input type="number" id="nota2"></div> <br>
+    <div><input type="number" id="nota3"></div> <br>
+    <div><input type="number" id="nota4"></div> <br>
+
+    <h2>Resultado</h2>
+    <div id="resultNota"></div>
+
+    <input type="button" value="Verificar" onclick="resultado()">
+
+    <h2>Atual Condição</h2>
+
+    <div id="cond"></div>
+
+    <script>
+        function resultado() {
+            var nt1 = document.getElementById('nota1')
+            var nt2 = document.getElementById('nota2')
+            var nt3 = document.getElementById('nota3')
+            var nt4 = document.getElementById('nota4')
+            
+            var n1 = Number(nt1.value)
+            var n2 = Number(nt2.value)
+            var n3 = Number(nt3.value)
+            var n4 = Number(nt4.value)
+
+            var resultN = document.getElementById('resultNota')
+            var result = (n1 + n2 + n3 + n4) / 4
+
+            resultN.innerHTML = `<p><strong>${result}</strong></p>`
+
+            var cond = document.getElementById('cond')
+
+            if (result > 6) {
+                cond.innerHTML = '<strong>APROVADO</strong>'
+            }
+
+            else if (result == 6) {
+                cond.innerHTML = '<strong>RECUPERAÇÃO</strong>'
+            }
+
+            else {
+                cond.innerHTML = '<strong>REPROVADO</strong>'
+            }
+        }
+    </script>
+</body>
+</html>

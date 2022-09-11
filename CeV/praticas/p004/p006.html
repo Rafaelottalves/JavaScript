@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p > input {
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <p>Em que ano você nasceu? <input type="number" id="ano"></p>
+
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <p>Idade:</p>
+
+    <div id="res">
+
+    </div>
+
+    <h2>Situação</h2>
+    <div id="sit">
+
+    </div>
+
+    <script>
+        function calcular() {
+            var anoN = document.getElementById('ano')
+            var anoNasceu = Number(anoN.value)
+            var res = document.getElementById('res')
+            var sit = document.getElementById('sit')
+
+            var idade = 2022 - anoNasceu
+
+            res.innerHTML = `${idade}`
+
+            if (idade > 18 || idade < 18) {
+                sit.innerHTML = `Você tem ${idade} anos e por isso não precisa se alistar no exercito`
+            }
+
+            else if (idade == 18) {
+                sit.innerHTML = `Você tem ${idade} anos e por isso deve se alistar no exercito`
+            }
+        }
+    </script>
+</body>
+</html>

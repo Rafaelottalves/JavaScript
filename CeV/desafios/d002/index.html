@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="body">
+    <h1 class="titulo">Verificador de Idade</h1>
+
+    <div class="container-form">
+        <form>
+            <p>Ano de Nascimento: <input type="number" id="anoNasc"></p>
+
+            <div class="container-sexo">
+                <p>
+                    Sexo:
+
+                    <input type="radio" name="sex" id="sx" value="masculino">
+                    <label for="sxM">Masculino</label>
+
+                    <input type="radio" name="sex" id="sx" value="feminino">
+                    <label for="sxF">Feminino</label>
+                </p>
+            </div>
+
+            <input type="button" value="Verificar" onclick="tipo()">
+        </form>
+
+        <p>Preencha os dados acima para ver os resultados!</p>
+    </div>
+
+    <div id="container-img">
+        <p id="perfil">dfsf</p>
+
+        <div id="img-wrapper"></div>
+    </div>
+
+    <a href="#">@rafaelottalves</a>
+
+    <script>
+        function tipo() {
+            var dataInfo = new Date()
+            var ano = dataInfo.getFullYear()
+
+            var anoNascimento = document.getElementById('anoNasc')
+            var nasc = Number(anoNascimento.value)
+
+            var idade = ano - nasc
+            var sexo = document.querySelector('input[name="sex"]:checked').value.toLowerCase()
+
+            var container = document.getElementById('container-img')
+            var img = document.getElementById('img-wrapper')
+
+            if (idade < 18 && sexo == 'masculino') {
+                container.style.visibility = 'visible'
+                perfil.innerHTML = `Detectamos Menino com ${idade} anos`
+            }
+
+            else if (idade < 18 && sexo == 'feminino') {
+                container.style.visibility = 'visible'
+                perfil.innerHTML = `Detectamos Menina com ${idade} anos`
+            }
+
+            if (idade >= 18 && idade <= 60 && sexo == 'masculino') {
+                container.style.visibility = 'visible'
+                perfil.innerHTML = `Detectamos Homem com ${idade} anos`
+                img.style.backgroundImage = 'url(img/>18M.webp)'
+            }
+
+            else if (idade >= 18 && idade <= 60 && sexo == 'feminino') {
+                container.style.visibility = 'visible'
+                perfil.innerHTML = `Detectamos Mulher com ${idade} anos`
+                img.style.backgroundImage = 'url(img/>18F.jpg)'
+            }
+
+            else if (idade > 60 && sexo == 'feminino') {
+                container.style.visibility = 'visible'
+                perfil.innerHTML = `Detectamos Mulher com ${idade} anos`
+                img.style.backgroundImage = 'url(img/>60F.jpg)'
+            }
+
+            else if (idade > 60 && sexo == 'masculino') {
+                container.style.visibility = 'visible'
+                perfil.innerHTML = `Detectamos Homem com ${idade} anos`
+                img.style.backgroundImage = 'url(img/>60M.png)'
+            }
+        }
+    </script>
+</body>
+</html>
