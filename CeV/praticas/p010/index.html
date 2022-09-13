@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numero">
+    <input type="button" value="Verificar" onclick="continuar()">
+    <p id="res"></p>
+
+    <script>
+        function continuar() {
+            var res = document.getElementById('res')
+
+            var obj = document.createElement('input')
+            obj.setAttribute('placeholder', 'quer continuar?')
+            obj.setAttribute('id', 'pergunta')
+
+            var cont = document.createElement('input')
+            cont.setAttribute('type', 'button')
+            cont.setAttribute('value', 'continuar?')
+            cont.setAttribute('id', 'botao')
+
+            res.appendChild(obj)
+            res.appendChild(cont)
+
+            cont.onclick = function loop() {
+                var resp = document.getElementById('pergunta').value.toLowerCase()
+
+                while(resp == 'sim') {
+                    var id = document.createElement('input')
+                    id.setAttribute('type', 'number')
+
+                    var verif = document.createElement('input')
+                    verif.setAttribute('type', 'button')
+                    verif.setAttribute('value', 'verificar')
+
+                    res.appendChild(id)
+                    res.appendChild(verif)
+
+                    var obj2 = document.createElement('input')
+                    obj2.setAttribute('id', pergunta2)
+
+                    var cont2 = document.createElement('input')
+                    cont2.setAttribute('type', 'button')
+                    cont2.setAttribute('value', 'continuar?')
+                    cont2.setAttribute('id', 'botao2')
+
+                    res.appendChild(obj2)
+                    res.appendChild(cont2)
+
+                    break
+                }            
+            }
+        }
+    </script>
+</body>
+</html>
+1

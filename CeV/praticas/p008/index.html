@@ -8,6 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p id="res"></p>
+
+    <script>
+        var res = document.getElementById('res')
+
+        var obj = document.createElement('input')
+        obj.setAttribute('type', 'number')
+        obj.setAttribute('id', 'entrada')
+
+        res.appendChild(obj)
+    </script>
 </body>
 </html>
