@@ -10,6 +10,8 @@ function contar() {
     var passo = document.getElementById('passo')
     var pass = Number(passo.value)
 
+    var c = n1
+
     if(pass <= 0) {
         alert('Valor invalido')
     } 
@@ -23,9 +25,9 @@ function contar() {
     } 
     
     else if(pass > 0 && n1 < n2) {
-        while(n1 <= n2) {
-            res.innerHTML += `${n1}`
-            n1 += pass
+        while(c <= n2) {
+            c += pass
+            res.innerHTML += `${c}`
     
             if(n1 <= n2) {
                 res.innerHTML += ' 👉 '

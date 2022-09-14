@@ -9,7 +9,6 @@ function gerar() {
 
         var opção = document.createElement('option')
         lista.appendChild(opção)
-        
         opção.innerHTML += `${n1} x ${c} = ${conta}`
     }
 }
