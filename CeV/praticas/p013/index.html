@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const nome = String(prompt('Seu nome'))
+
+        while(nome.length <= 3) {
+            const nome = String(prompt('[Precisa ter mais de 3 caracteres]Digite novamente'))
+
+            if(nome.length > 3) {
+                alert('Nome valido')
+                break
+            }
+        }
+
+        const idade = Number(prompt('Sua idade'))
+
+        while(idade < 0 || idade > 150) {
+            const idade = Number(prompt('[idade invalida] Digite novamente'))
+
+            if(idade >= 0 && idade <= 150) {
+                alert('Idade valida')
+                break
+            }
+        }
+
+        const sexo = String(prompt('Seu sexo')).toLowerCase()
+
+        while(sexo != 'f' && sexo != 'm') {
+            const sexo = String(prompt('[Sexo invalido] Digite novamente')).toLowerCase()
+
+            if(sexo == 'f' || sexo == 'm') {
+                alert('sexo valido')
+                break
+            }
+        }
+
+        const salario = Number(prompt('Seu salario'))
+
+        while(salario < 0) {
+            const salario = Number(prompt('[Salario invalido] Digite novamente'))
+
+            if(salario >= 0) {
+                alert('Salario valido')
+                break
+            }
+        }
+
+        const estadoC = String(prompt('Seu estado civil'))
+
+        while(estadoC != 's' && estadoC != 'c' && estadoC != 'v' && estadoC != 'd') {
+            const estadoC = String(prompt('[Estado civil invalido] Digite novamente'))
+
+            if(estadoC == 's' || estadoC == 'c' || estadoC == 'v' ||estadoC == 'd') {
+                alert('Estado civil valido')
+                break
+            }
+        }
+    </script>
+</body>
+</html>
