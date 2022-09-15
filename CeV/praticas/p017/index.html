@@ -9,13 +9,16 @@
 </head>
 <body>
     <script>
-        var num = Number(prompt('Digite um numero'))
+        var soma = 0
+        var div = 0
+        var quant = Number(prompt('Quantas notas?'))
 
-        for(var c = 0;c <= num;c++) {
-            if(c % num == 0) {
-                
-            }
+        for(var c = 0;c < quant;c++){
+            var num = Number(prompt(`Digite a nota ${c}`))
+            soma += num
         }
+        div = soma / c
+        alert(`A media total das ${c} notas é: ${div}`)
     </script>
 </body>
 </html>

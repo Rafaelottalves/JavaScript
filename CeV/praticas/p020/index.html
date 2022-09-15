@@ -9,13 +9,12 @@
 </head>
 <body>
     <script>
-        var num = Number(prompt('Digite um numero'))
-
-        for(var c = 0;c <= num;c++) {
-            if(c % num == 0) {
-                
-            }
+        var num = Number(prompt('Digite um numero para o fatorial'))
+        var ni = 1
+        for(var c = 1;c <= num;c++) {
+            ni *= c
         }
+        alert(ni)
     </script>
 </body>
 </html>

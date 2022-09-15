@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var quant = Number(prompt('Quantas pessoas?'))
+        var soma = 0
+
+        for(var c = 0;c < quant;c++) {
+            var idade = Number(prompt(`Digite sua idade`))
+            soma += idade
+        }
+
+        var res = soma / c
+
+        if(quant == '') {
+            alert('Valor invalido')
+        } else {
+            alert(`A media de idade da turma é de ${res} anos`)
+        }
+
+        if(res >= 0 && res <= 25) {
+            alert('A turma é jovem')
+        } else if(res >= 26 && res <= 60) {
+            alert('A turma é adulta')
+        } else if(res < 0 || res == ' ') {
+            alert('Turma invalida')
+        } else if(res > 60) {
+            alert('A turma é idosa')
+        }
+    </script>
+</body>
+</html>

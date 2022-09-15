@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ele = Number(prompt('Quantos eleitores?'))
+
+        var opc1 = 0
+        var opc2 = 0
+        var opc3 = 0
+
+        for(var c = 0;c < ele;c++) {
+            var voto = Number(prompt('Vote'))
+
+            if(voto == 5) {
+                opc1 ++
+            } else if(voto == 8) {
+                opc2 ++
+            } else if(voto == 1) {
+                opc3 ++
+            }
+        }
+        
+        if(opc1 > opc2 && opc2 > opc3) {
+            alert(`Em primeiro lugar ficou o candidato 1, com ${opc1} votos`)
+            alert(`Em segundo lugar ficou o candidato 2, com ${opc2} votos`)
+            alert(`Em ultimo lugar ficou o candidato 3, com ${opc3} votos`)
+        }
+
+        else if(opc2 > opc1 && opc1 > opc3) {
+            alert(`Em primeiro lugar ficou o candidato 2, com ${opc2} votos`)
+            alert(`Em segundo lugar ficou o candidato 1, com ${opc1} votos`)
+            alert(`Em ultimo lugar ficou o candidato 3, com ${opc3} votos`)
+        }
+
+        else if(opc3 > opc2 && opc2 > opc1) {
+            alert(`Em primeiro lugar ficou o candidato 3, com ${opc3} votos`)
+            alert(`Em segundo lugar ficou o candidato 2, com ${opc2} votos`)
+            alert(`Em ultimo lugar ficou o candidato 1, com ${opc1} votos`)
+        }
+
+        else if(opc1 > opc3 && opc3 > opc2) {
+            alert(`Em primeiro lugar ficou o candidato 1, com ${opc1} votos`)
+            alert(`Em segundo lugar ficou o candidato 3, com ${opc3} votos`)
+            alert(`Em ultimo lugar ficou o candidato 2, com ${opc2} votos`)
+        }
+        
+        else if(opc1 == opc3 && opc3 == opc2) {
+            alert(`Todos tiveram ${opc1} votos`)
+        }
+    </script>
+</body>
+</html>
