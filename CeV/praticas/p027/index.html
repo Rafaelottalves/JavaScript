@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n = Number(prompt('Digite um numero'))
+
+        num = []
+        primo = []
+
+        for(let c = 1;c <= n;c++) {
+            num.push(c)
+        }
+
+        for(let pos in num) {
+            for(let cont = 0;cont <= num[pos];cont++) {
+                if(num[pos] % cont == 0) {
+                    primo.push(cont)
+                }
+            }
+
+            if(primo.length == 2) {
+                alert(`${num[pos]} é primo`)
+            }
+        }
+    </script>
+</body>
+</html>

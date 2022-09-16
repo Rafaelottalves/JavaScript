@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        quantTurmas = Number(prompt('Quantas turmas'))
+        let somaAlunos = 0
+        let mediTurmas = 0
+
+        for(let c = 1;c <= quantTurmas;c++) {
+            quantAlunos = Number(prompt(`Quantos alunos na turma ${c}`))
+
+            if(quantAlunos > 40) {
+                alert('Não pode passar de 40 alunos')
+            }
+
+            else {
+                somaAlunos += quantAlunos
+            }
+        }
+
+        mediaTurmas = somaAlunos / quantTurmas
+
+        alert(`A media de alunos com ${quantTurmas} turmas são ${mediaTurmas} alunos`)
+    </script>
+</body>
+</html>
