@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function soma(n1, n2, n3) {
+            return n1 + n2 + n3
+        }
+
+        let n1 = Number(prompt('Digite o primeiro numero'))
+        let n2 = Number(prompt('Digite o segundo numero'))
+        let n3 = Number(prompt('Digite o terceiro numero'))
+
+        let res = soma(n1, n2, n3)
+
+        alert(`A soma entre ${n1}, ${n2} e ${n3} é ${res}`)
+
+        function media(r) {
+            m = r / 3
+
+            return m
+        }
+        let resp = media(res)
+
+        alert(`A media é ${resp}`)
+    </script>
+</body>
+</html>

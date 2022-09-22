@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function primo(n) {
+            nums = []
+
+            for(let c = 1;c <= n;c++) {
+                if(n % c == 0) {
+                    nums.push(c)
+                }
+            }
+
+            if(nums.length == 2) {
+                return 'é primo'
+            }
+            else {
+                return 'não é primo'
+            }
+        }
+
+        let num = Number(prompt('Digite um numero'))
+
+        alert(primo(num))
+    </script>
+</body>
+</html>
