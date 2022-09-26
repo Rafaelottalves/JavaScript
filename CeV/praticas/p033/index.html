@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"  id="item" placeholder="item">
+    <p><input type="number" id="quant" placeholder="quantidade"></p>
+    <input type="button" value="Pedir" onclick="verificar()">
+
+    <script>
+        function verificar() {
+            let it = document.getElementById('item')
+            let item = Number(it.value)
+            let quant = document.getElementById('quant')
+            let preco = 0
+
+            if(item == 100) {
+                preco = 1.20
+
+                for(let c = 0;c <= quant;c++) {
+                    precoFinal += quant + preco
+                }
+
+                alert(`Deu ${precoFinal}`)
+            }
+        }
+    </script>
+</body>
+</html>
