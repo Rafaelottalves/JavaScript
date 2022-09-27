@@ -3,8 +3,10 @@ function aparecer() {
     let menu = document.getElementById('nav')
 
     if(btnM.checked) {
-        menu.style.display = 'block'
+        menu.style.transform = 'translateX(0px)'
+        menu.style.transition = '.5s ease-in'
     } else {
-        menu.style.display = 'none'
+        menu.style.transform = 'translateX(-230px)'
+        menu.style.transition = '.5s ease-out'
     }
 }
