@@ -1,10 +1,10 @@
-function precoImposto(imp, preco) {
-    return preco * (1 + imp)
-}
+// function precoImposto(imp, preco) {
+//     return preco * (1 + imp)
+// }
 
-// RJ
-console.log(precoImposto(0.11, 56.78))
-console.log(precoImposto(0.11, 12.33))
+// // RJ
+// console.log(precoImposto(0.11, 56.78))
+// console.log(precoImposto(0.11, 12.33))
 
 
 
