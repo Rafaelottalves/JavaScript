@@ -1,18 +1,19 @@
-// verificar os nomes que começam com a mesma letra e guarda-los em um array
+// Fazer uma tela de login que entre com dados e foto dependendo do login
+// Fazer possivel se cadastrar, colocar seus dados e guardar
+// Fazer um sistema de Cadastro - Login
 
-let nomes = ['rafael', 'paulo', 'pedro', 'josé', 'raul', 'matheus', 'joão']
-
-let dir = []
-let esq = []
-
-for(let el of nomes) {
-    dir.push(el[0])
-}
-
-for(let i = nomes.length-1;i >= 0;i--) {
-    esq.push(nomes[i][0])
-}
-
-for(let i = 0;i < dir.length;i++) {
+function first(arr, n) {
+    let valores = []
     
+    if(n == undefined) {
+      valores.push(arr[0])
+    } else {
+      for(let c = 0;c < n;c++) {
+        valores.push(arr[c])
+      }
+    }
+    
+    return valores
 }
+
+console.log(first(['a', 'b', 'c', 'd', 'e'], 5))
