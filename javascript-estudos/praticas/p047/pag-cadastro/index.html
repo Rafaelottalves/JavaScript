@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="shortcut icon" href="../imagens/favicon/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="estilo.css">
     <title>V-Frontier | Cadastro</title>
 </head>
 <body>
-    
+    <main class="container-conteudo-principal">
+        <section class="conteudo-principal">
+            <div class="container-titulo-principal">
+                <h1>Cadastro</h1>
+            </div>
+
+            <form class="formulario">
+                <div>
+                    <input type="text" id="entrada-nome">
+                </div>
+
+                <div>
+                    <input type="email" id="entrada-email">
+                </div>
+
+                <div>
+                    <input type="password" id="entrada-senha">
+                </div>
+
+                <div class="container-permissao">
+                    <input type="checkbox" id="">
+                    <p>Eu concordo com todos os termos propostos</p>
+                </div>
+
+                <input type="submit" value="Fazer meu cadastro" class="btn-cadastro">
+            </form>
+
+            <div class="container-retorno">
+                <!-- Voltar -->
+                <a href="../pag-inicio/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
