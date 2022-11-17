@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+.bloco-perfil {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-geral {
+    width: 400px;
+    height: 500px;
+
+    background-color: rgba(67, 155, 185, 0.849);
+}
+
+.container-titulo {
+    padding-top: 12px;
+}
+
+.container-titulo h1 {
+    font-size: 1.3em;
+    font-family: 'Courier New', Courier, monospace;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
