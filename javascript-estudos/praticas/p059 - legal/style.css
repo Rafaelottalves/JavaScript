@@ -1,0 +1,16 @@
+.bloco {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 60px;
+    height: 300px;
+
+    border-radius: 50px;
+    margin-right: 10px;
+
+    background-color: black;
+}
