@@ -48,3 +48,11 @@ Imitar um jogo de console/controle na frente, dando cliques no controle controla
 pixel art???
 fazer um site to do list
 */
+/*
+scrola pra baixo o personagem no fundo vai descendo, escadas - plataformas - mosntros? -
+*/
+/* 
+Site no estilo em quadrinhos/manga (hq) separando as coisas por blocos
+preto e branco? colorido? cor?
+-> referencia: https://www.openpeeps.com/
+*/
