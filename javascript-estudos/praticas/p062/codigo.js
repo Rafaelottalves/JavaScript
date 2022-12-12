@@ -7,8 +7,6 @@ exercicios ?
 praticar no javascript
 */
 
-// $ é quando termina a string, \b é quando termina a palavra
-
 //switch - grid - while -
 
 //quando terminar regex voltar no video do guanas em que ele usa regex
@@ -17,7 +15,20 @@ praticar no javascript
 
 // depois que terminar regex fazer desafios no codewars e depois fazer aquele teste do card usando       -> javascript <- 
 
-//contendo tudo o que foi identificado | a flag g faz o retorno do match ser diferente
 
 // comentar o codigo - 
+
+// split e string
+
+//pra praticar fazer exercicios no codewar
+
+/* beber mais agua, correr (4:45) as vezes campo, comer menos no geral, me exercitar ,estudar igual um louco, banho gelado */
+
+/* 
+menos exercicios mais constancia (ir aumentando aos poucos):
+
+
+*/
+
+
 
