@@ -26,9 +26,20 @@ praticar no javascript
 
 /* 
 menos exercicios mais constancia (ir aumentando aos poucos):
-
+2 peso (25 cada braço) - cadeira (25) - flexão (50) - flexão fechada (25) - barra normal (40) - trapezio (50) - puxe cima (30)
 
 */
 
+// split, matchAll, replaceAll, String - estudar!!
+
+// match encontra todas as ocorrencias e joga dentro de um array
+
+// estudar mais filter, map, reduce
 
 
+//depois do curso e de arrumar tudo ler a documentação
+//depois studar filter, map e reduce junto de regex
+//depois disso praticar
+// depois fazer exercicios
+// depois terminou, vamo pro proximo
+ 
