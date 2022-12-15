@@ -37,9 +37,17 @@ menos exercicios mais constancia (ir aumentando aos poucos):
 // estudar mais filter, map, reduce
 
 
-//depois do curso e de arrumar tudo ler a documentação
-//depois studar filter, map e reduce junto de regex
+//studar filter, map e reduce junto de regex
 //depois disso praticar
 // depois fazer exercicios
 // depois terminou, vamo pro proximo
  
+// .dotall??
+
+let arr = ['rafael', 'joao', 'pedro', 'janaina', 'sadie', 'debora', 'rudi', 'renata']
+
+let reg = /\br\w+/g
+
+let valid = arr.filter((item) => item.match(reg))
+
+console.log(valid)
