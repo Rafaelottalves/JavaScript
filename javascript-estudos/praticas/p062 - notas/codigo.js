@@ -1,28 +1,12 @@
-/* Relembrar Regex
-praticar no regexr !
-ver as anotações !
-praticar no javascript !
-rever videos (praticar) !
-exercicios ?
-praticar no javascript
-*/
-
-//switch - grid - while -
-
-//quando terminar regex voltar no video do guanas em que ele usa regex
+// depois fazer desafios no codewars e depois fazer aquele teste do card usando  -> javascript <- 
 
 //expressao regular + função + grupos == Muito Poder
 
-// depois que terminar regex fazer desafios no codewars e depois fazer aquele teste do card usando       -> javascript <- 
+// comentar o codigo - switch - grid - while -
 
-
-// comentar o codigo - 
-
-// split e string
-
-//pra praticar fazer exercicios no codewar
-
-/* beber mais agua, correr (4:45) as vezes campo, comer menos no geral, me exercitar ,estudar igual um louco, banho gelado */
+/* 
+beber mais agua, correr (4:45) as vezes campo, comer menos no geral, me exercitar ,estudar igual um louco, banho gelado 
+*/
 
 /* 
 menos exercicios mais constancia (ir aumentando aos poucos):
@@ -30,24 +14,7 @@ menos exercicios mais constancia (ir aumentando aos poucos):
 
 */
 
-// split, matchAll, replaceAll, String - estudar!!
+//formatacao unicode para o javascript??
 
-// match encontra todas as ocorrencias e joga dentro de um array
+// erros??
 
-// estudar mais filter, map, reduce
-
-
-//studar filter, map e reduce junto de regex
-//depois disso praticar
-// depois fazer exercicios
-// depois terminou, vamo pro proximo
- 
-// .dotall??
-
-let arr = ['rafael', 'joao', 'pedro', 'janaina', 'sadie', 'debora', 'rudi', 'renata']
-
-let reg = /\br\w+/g
-
-let valid = arr.filter((item) => item.match(reg))
-
-console.log(valid)
