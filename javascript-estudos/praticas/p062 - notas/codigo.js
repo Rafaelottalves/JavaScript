@@ -1,5 +1,3 @@
-// fazer aquele teste do card usando  -> javascript <- 
-
 //expressao regular + função + grupos == Muito Poder
 
 // comentar o codigo - switch - grid - while -
