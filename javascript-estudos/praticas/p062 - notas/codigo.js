@@ -1,4 +1,4 @@
-// depois fazer desafios no codewars e depois fazer aquele teste do card usando  -> javascript <- 
+// fazer aquele teste do card usando  -> javascript <- 
 
 //expressao regular + função + grupos == Muito Poder
 
@@ -16,5 +16,5 @@ menos exercicios mais constancia (ir aumentando aos poucos):
 
 //formatacao unicode para o javascript??
 
-// erros??
+// erros?? slice!
 
