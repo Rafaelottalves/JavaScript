@@ -1,7 +1,3 @@
-//depois juntar classes com html-css (formulario)
-// validados especial - admin
-
-
 
 /* 
 const reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -13,9 +9,6 @@ const reg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%*()_+^&}{:;?.])(?:([0-9a-zA-Z]
 
 
 /* 
-    // praticar Classes
-// desafios/exercicios sobre classes
-// terminou
 
 // estrategia: primeiro começar a povoar minhas redes sociais, depois meu github, depois fazer meu site portfolio e por ultimo minha conta no linkedin
 
