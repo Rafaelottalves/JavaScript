@@ -37,7 +37,7 @@ class Produto {
 
             let iconDelete = document.createElement('i')
             iconDelete.setAttribute('class', 'fa-solid fa-trash iconSty')
-            iconDelete.setAttribute('onclick', 'produto.deletar('+ this.arrProd[i].id +')')
+            iconDelete.setAttribute('onclick', 'produto.deletar('+ this.arrProd[i].id +')') // NOVO CODIGO
 
             td_acoes.appendChild(iconEdit)
             td_acoes.appendChild(iconDelete)
@@ -87,7 +87,6 @@ class Produto {
     }
 
     deletar(id) {
-
         if(confirm('Deseja realmente deletar o produto ' + id)) {
             let tbody = document.getElementById('tbody')
 
