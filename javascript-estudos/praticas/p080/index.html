@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="container-titulo">
+                <h1>Minha Loja 1.0</h1>
+        </section>
+
+        <section>
+            <section class="descricao-conteudo">
+                <h2>Produtos</h2>
+                <p>Lista de produtos da minha loja.</p>
+            </section>
+
+            <section class="form-prod">
+                <label for="nome">
+                    <div>
+                        <p>Produto</p>
+                        <input class="input" type="text" name="nome" id="nome" placeholder="Nome do produto">
+                    </div>
+                </label>
+
+                <label for="preco">
+                    <div>
+                        <p>Preço</p>
+                        <input class="input" type="number" name="preco" id="preco" placeholder="Valor do produto">
+                    </div>
+                </label>
+
+                <button class="btn" onclick="adicionar()">Adicionar</button>
+                <button class="btn" onclick="limpar()">Cancelar</button>
+            </section>
+
+            <section class="container-tabela">
+                <table class="tabela">
+                    <thead>
+                        <tr class="meio">
+                            <td>ID</td>
+                            <td>Nome</td>
+                            <td>Preço</td>
+                            <td>Ações</td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="corpo-tabela">
+                        <tr class="meio">
+                            <td>1</td>
+                            <td>Mesa para sala</td>
+                            <td>1900</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class="fa-solid fa-trash" onclick="remover()"></i>
+                            </td>
+                        </tr>
+                        <tr class="meio">
+                            <td>2</td>
+                            <td>Mesa para sala</td>
+                            <td>1900</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class="fa-solid fa-trash" onclick="remover()"></i>
+                            </td>
+                        </tr class="meio">
+                        <tr class="meio">
+                            <td>3</td>
+                            <td>Mesa para sala</td>
+                            <td>1900</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class="fa-solid fa-trash" onclick="remover()"></i>
+                            </td>
+                        </tr>
+                        <tr class="meio">
+                            <td>4</td>
+                            <td>Mesa para sala</td>
+                            <td>1900</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class="fa-solid fa-trash" onclick="remover()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </section>
+        </section>
+    </main>
+
+    <script src="./codigo.js"></script>
+</body>
+</html>

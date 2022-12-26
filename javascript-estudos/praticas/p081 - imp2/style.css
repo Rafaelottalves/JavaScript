@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: blueviolet;
+}
+
+main {
+    padding: 30px 50px;
+}
+
+.card {
+    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.lineInput {
+    display: grid;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: blueviolet;
+    transition: all ease .3s;
+}
+
+
+button:hover {
+    background-color: rgb(100, 30, 167);
+}
+
+.content {
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 1px 5px;
+    background-color: rgb(214, 214, 214);
+}
+
+table th,td {
+    padding: 1px 5px;
+    text-align: left;
+}
+
+table td i {
+    font-size: 22px;
+}
+
+.center {
+    text-align: center;
+}
+
+.iconSty {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.iconSty + .iconSty {
+    margin-left: 10px;
+}
