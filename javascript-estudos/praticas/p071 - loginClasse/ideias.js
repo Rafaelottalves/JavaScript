@@ -1,12 +1,8 @@
-
 /* 
 const reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const reg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%*()_+^&}{:;?.])(?:([0-9a-zA-Z])(?!\1)|[!@#$%;*(){}_+^&]){6,}$/
 */
-
-// metodo dentro da classe - classe diferente?
-
 
 /* 
 
@@ -124,8 +120,3 @@ escolhendo outro -> inimigofraco (vida: 5, dano: 2, recup: 2 <- propriedades da 
 
 quando derrotar certa quantidade de inimigo o boss éescolhido automaticamente?
  */
-
-/* 
-Quando for estudar ferramentas do css-html estudar CANVA DO HTML tambem e acessibilidade*/
-
-// clone twitter - escrever msgs, postar etc
