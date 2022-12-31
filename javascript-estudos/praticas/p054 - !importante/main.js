@@ -49,10 +49,14 @@ pixel art???
 fazer um site to do list
 */
 /*
-scrola pra baixo o personagem no fundo vai descendo, escadas - plataformas - mosntros? -
+scrola pra baixo o personagem no fundo vai descendo, escadas - plataformas - mosntros? - controlar o personagem para entrar em casas portas construções e la vai ter coissas sobre mim? poder escolher o modo de um site normal e esse? escrollar e o personagem ir descendo e ir aparecendo conteudo ou controlar o personagem? tema claro e escuro no modo do personagem ficar dia e noite
 */
 /* 
 Site no estilo em quadrinhos/manga (hq) separando as coisas por blocos
 preto e branco? colorido? cor?
 -> referencia: https://www.openpeeps.com/
 */
+/* 
+IMITAR UM JORNAL, ARASTAR PRO LADO A PAGINA DO JORNAL PASSA (BARULINHO DE JORNAL) OU MUDAR A PAGINA DO SITE A PAGINA DO JORNAL PASSA? PRETO E BRANCO?CONFORME VAI PASSANDO AS CORES VAO APARECENDO?
+*/
+
