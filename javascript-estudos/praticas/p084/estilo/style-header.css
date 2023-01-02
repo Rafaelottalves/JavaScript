@@ -2,35 +2,39 @@
 
 @import url('./reset.css');
 
+:root {
+    --cor-primaria: #FFC451;
+    --cor-secundaria: #FFBB38;
+}
+
 header#header {
-    height: 73px;
+    height: 12.5vh;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background-color: black;
-}
-
-.container-titulo {
-    margin-left: 120px;
-    font-size: 1.3em;
-    letter-spacing: 2px;
+    /* background-color: black; */
 }
 
 .container-titulo a {
+    margin-left: 120px;
+
+    font-size: 1.3em;
+    letter-spacing: 2px;
+
     display: block;
+
     color: white;
 }
 
 .container-titulo span {
-    color: rgb(233, 233, 63);
+    color: var(--cor-primaria);
 }
 
 .container-naveg {
     width: 615px;
     margin-right: -30px;
-    /* background-color: red; */
 }
 
 .lista-geral {
@@ -38,53 +42,56 @@ header#header {
     justify-content: space-between;
 }
 
+.lista-geral > li > a {
+    padding: 13px 15px;
+    display: block;
+    
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: .5px;
+
+    color: white;
+}
+
+.lista-geral > li > a:hover {
+    color: var(--cor-primaria);
+}
+
+.lista-geral > li > a:hover i {
+    color: var(--cor-primaria);
+}
+
 .item-drop1 {
     position: relative;
 }
 
-.lista-drop1 {
+.item-drop1 > ul {
     display: none;
     position: absolute;
 }
 
-.item-drop1:hover > .lista-drop1 {
+.item-drop1:hover > ul {
     width: 198px;
-
     padding: 10px 0px;
 
     display: block;
+
     left: 0px;
     top: 43px;
+
     background-color: white;
 }
 
-.item-drop1:hover > .lista-drop1 > li a {
+.item-drop1:hover > ul > li a {
     padding: 12px 25px;
+    display: block;
+
     font-size: .9em;
     color: black;
-    display: block;
 }
 
-.item-drop1:hover > .lista-drop1 > li a:hover {
-    background-color: red;
-}
-
-.lista-geral > li > a {
-    padding: 13px 15px;
-    font-size: .9em;
-    font-weight: 500;
-    display: block;
-    letter-spacing: .5px;
-    color: white;
-    /* background-color: blue; */
-}
-
-.lista-geral > li > a:hover {
-    color: rgb(255, 204, 38);
-}
-
-.lista-geral > li > a:hover i {
-    color: rgb(255, 204, 38);
+.item-drop1:hover > ul > li a:hover {
+    background-color: var(--cor-primaria);
 }
 
 .item-drop2 {
@@ -102,24 +109,24 @@ header#header {
 
 .item-drop2:hover > .lista-drop2 {
     width: 198px;
+    
     padding: 10px 0px;
     display: block;
+
     top: 0px;
     right: 100%;
+
     background-color: white;
 }
 
-.container-btn-header {
-    margin-right: 135px;
-}
-
 .container-btn-header button {
-    padding: 8px 18px;
+    margin-right: 135px;
+    padding: 10px 20px;
 
     font-size: .9em;
     letter-spacing: .5px;
 
-    border: 2px solid yellow;
+    border: 2px solid var(--cor-primaria);
     border-radius: 5px;
     cursor: pointer;
 
@@ -128,6 +135,6 @@ header#header {
 }
 
 .container-btn-header button:hover {
-    color: black;
-    background-color: yellow;
+    color: rgb(34, 33, 33);
+    background-color: var(--cor-secundaria);
 }

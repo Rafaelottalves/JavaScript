@@ -5,3 +5,5 @@ Depois estudar 'Manipulações de ... (manejo)': */
 // pagina pra adicionar projetos? sobre? tudo?
 // REFATORAR - DEBUGAR?
 
+// Portifolio: seção anual - meus projetos em 20... (meus projetos em 2022, meus projetos em 2023....)
+

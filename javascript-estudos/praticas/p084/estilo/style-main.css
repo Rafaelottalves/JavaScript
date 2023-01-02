@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+.container-capa {
+    width: 100%;
+    height: 100vh;
+
+    margin-top: -73px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    background-color: black;
+    background-image: url('../img/hero-bg-2.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container-desc-capa {
+    width: 530px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.container-desc-capa h1 {
+    text-align: center;
+    font-size: 3.5em;
+    margin: 10px 0px;
+}
+
+.container-desc-capa h1 span {
+    color: var(--cor-primaria);
+}
+
+.container-desc-capa p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container-opcoes-capa {
+    display: flex;
+}
+
+.container-opcoes-capa div {
+    width: 168px;
+    height: 170px;
+    padding: 0px 18px;
+
+    cursor: pointer;
+
+    border: 1px solid gray;
+}
+
+.container-opcoes-capa div + div {
+    margin-left: 20px;
+}
+
+.container-opcoes-capa div:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.container-opcoes-capa div i {
+    margin: 30px 0px 20px 0px;
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--cor-primaria);
+    display: block;
+}
+
+.container-opcoes-capa div p {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.container-sobre {
+    height: 90vh;
+    padding: 40px 0px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.sobre {
+    width: 550px;
+    height: 442px;
+    margin-right: 35px;
+    background-color: red;
+}
+
+.sobre h2 {
+    font-size: 1.6em;
+    color: #444444;
+}
+
+.sobre p, ol {
+    color: #454545;
+}
+
+.container-img-sobre {
+    width: 545px;
+}
+
+.container-img-sobre img {
+    width: 100%;
+    height: 100%;
+}
