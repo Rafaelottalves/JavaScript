@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn {
+            width: 60px;
+            height: 10px;
+            position: absolute;
+            top: 138px;
+            z-index: 2;
+            /* border-top-left-radius: 5px;
+            border-top-right-radius: 5px; */
+            background-color: rgb(14, 13, 13);
+            box-shadow: 0px -5px 0px rgb(65, 60, 60);
+        }
+        .relogio {
+            width: 500px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(14, 13, 13);
+            box-shadow: 0px -20px 0px 0px rgb(27, 27, 27);
+        }
+        .container-time {
+            width: 475px;
+            height: 155px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px dashed green;
+            border-radius: 5px;
+        }
+        p {
+            font-size: 5em;
+            letter-spacing: 10px;
+            color: white;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn"></div>
+    <div class="relogio">
+        <div class="container-time">
+            <p id="hor"></p>
+            <p id="min"></p>
+            <p id="sec"></p>
+        </div>
+    </div>
+    <script src="./codigo.js"></script>
+</body>
+</html>

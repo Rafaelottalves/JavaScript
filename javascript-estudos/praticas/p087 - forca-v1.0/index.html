@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="bloco-forca">
+        <div class="estrutura-forca">
+            <div class="container-forca">
+                <img src="./img/forca-01.png" alt="">
+            </div>
+
+            <div class="container-resp">
+               <!-- <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1"> -->
+            </div>
+        </div>
+
+        <div class="container-tema">
+            <!-- <p>Animal</p> -->
+        </div>
+
+        <div class="container-titulo">
+            <h1>Rodada 1</h1>
+        </div>
+
+        <div class="container-contador">
+<!--             <div class="min"></div>
+            <p>:</p>
+            <div class="sec1"></div>
+            <div class="sec2"></div> -->
+        </div>
+
+        <div class="container-jogada">
+            <p>Digite uma letra:</p>
+
+            <input type="text" id="" maxlength="1" disabled>
+            <button disabled>Tentar</button>
+        </div>
+
+        <div class="container-tentativas">
+            <p>Tentativas: <span></span></p>
+        </div>
+
+        <div class="container-btn-start">
+            <button id="btn-inicio">Começar</button>
+        </div>
+
+        <div class="cimiterio"></div>
+    </section>
+
+    <script src="./codigo.js"></script>
+    <!-- FAZER UMA VERSÃO USANDO GRID -->
+</body>
+</html>
+
+<!-- 
+let palavras = [
+            {tema: 'Animal', tipo: ['baleia','caranguejo', 'elefante', 'flamingo', 'gato', 'hipopótamo']},
+            {tema: 'Pais', tipo: ['Afeganistão', 'Bélgica', 'Brasil', 'Camarões', 'Emirados Árabes Unidos']}
+        ]
+
+
+        let TemaAleatorio = palavras[Math.floor(Math.random() * palavras.length)].tema
+    
+        let containerTema = document.querySelector('.container-tema')
+        let tema = document.createElement('p')
+        tema.innerHTML = TemaAleatorio
+    
+        containerTema.appendChild(tema)
+ -->
