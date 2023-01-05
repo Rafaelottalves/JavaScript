@@ -1,5 +1,3 @@
-// array de objeto separado por temas nos temas as palavras
-
 let btnInicio = document.getElementById('btn-inicio')
 let click = 0
 
@@ -50,12 +48,51 @@ function contador(min, sec) {
     let interval = setInterval(timer, 1000)
 }
 
+function addTipo(posTema, palavras) {
+    let tipoAleatorio = palavras[posTema].tipo
+    console.log(tipoAleatorio)
+}
+
+function adicionarTemaTipo(palavras) {
+    let posTema = Math.floor(Math.random() * palavras.length)
+    let temaAleatorio = palavras[posTema].tema
+    
+    let containerTema = document.querySelector('.container-tema')
+    let tema = document.createElement('p')
+    tema.innerHTML = temaAleatorio
+
+    addTipo(posTema, palavras)
+
+    containerTema.appendChild(tema)
+}
+
+function adicionarTentativas(tentativas) {
+    let containTent = document.querySelector('.container-tentativas > p')
+    let tent = document.createElement('span')
+
+    quantTent = tentativas
+
+    tent.innerHTML = quantTent
+
+    containTent.appendChild(tent)
+}
+
+function game() {
+    let palavras = [
+        {tema: 'Animal', tipo: ['baleia','caranguejo', 'elefante', 'flamingo', 'gato', 'hipopótamo']},
+        {tema: 'Pais', tipo: ['Afeganistão', 'Bélgica', 'Brasil', 'Camarões', 'Emirados Árabes Unidos']}
+    ]
+
+    adicionarTemaTipo(palavras)
+    adicionarTentativas(8)
+}
 
 function inicio() {
     click++
 
     if(click == 1) {
         contador(1, 0)
+        game()
     }
 
     else {
