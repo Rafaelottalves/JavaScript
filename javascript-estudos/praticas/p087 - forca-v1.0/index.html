@@ -40,8 +40,8 @@
         <div class="container-jogada">
             <p>Digite uma letra:</p>
 
-            <input type="text" id="" maxlength="1" disabled>
-            <button disabled>Tentar</button>
+            <input type="text" id="input-tentativa" maxlength="1" disabled>
+            <button id="btn-jogada" disabled>Tentar</button>
         </div>
 
         <div class="container-tentativas">
@@ -59,3 +59,33 @@
     <!-- FAZER UMA VERSÃO USANDO GRID -->
 </body>
 </html>
+
+<!-- 
+
+function jogada(p) {
+    let inputTentativa = document.getElementById('input-tentativa')
+    inputTentativa.removeAttribute('disabled')
+    inputTentativa.focus()
+
+    let btnJogada = document.getElementById('btn-jogada')
+    
+    function validarJogada(p) {
+        console.log(btnJogada.value)
+    }
+    
+    btnJogada.addEventListener('click', validarJogada(p))
+}
+
+ -->
+
+ <!-- 
+    let btnJogada = document.getElementById('btn-jogada')
+    btnJogada.removeAttribute('disabled')
+
+    function validarJogada() {
+        console.log(btnJogada.value)
+    }
+
+    btnJogada.addEventListener('click', validarJogada)
+  -->
+  

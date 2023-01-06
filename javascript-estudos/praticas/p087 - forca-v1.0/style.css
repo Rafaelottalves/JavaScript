@@ -44,21 +44,23 @@
 }
 
 .container-resp {
+    max-width: 1000px;
     position: absolute;
     left: 120px;
     top: 309px;
 
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
 
     /* background-color: rgb(75, 36, 36); */
 }
 
 .container-resp input {
-    width: 50px;
-    height: 70px;
+    width: 33px;
+    height: 50px;
 
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
 
     border: none;
@@ -204,9 +206,9 @@
 
     position: absolute;
     right: 450px;
-    bottom: 180px;
+    bottom: 200px;
 
-    background-color: red;
+    /* background-color: red; */
 }
 
 .container-btn-start button {

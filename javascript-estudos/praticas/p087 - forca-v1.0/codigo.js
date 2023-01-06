@@ -48,9 +48,93 @@ function contador(min, sec) {
     let interval = setInterval(timer, 1000)
 }
 
+function addLetraCerta(containerPalavra, letra, posPalavraAdd, arrTentativa) {
+    let arrItens = containerPalavra.childNodes
+
+    for(let i = 0;i < arrTentativa.length;i++) {
+        for(let pos of posPalavraAdd) {
+            if(i == pos) {
+                arrItens[i+3].value = letra
+            }
+        }
+    }
+}
+
+function jogada(containerPalavra, tipoAleat) {
+    let inputTentativa = document.getElementById('input-tentativa')
+    inputTentativa.removeAttribute('disabled')
+    inputTentativa.focus()
+
+    let btnJogada = document.getElementById('btn-jogada')
+    btnJogada.removeAttribute('disabled')
+
+    function validarJogada() {
+        let palavra = inputTentativa.value
+        let reg = /^[a-zA-ZáéíóúâêîôũàèìòùãẽĩõũÁÉÍÓÚÂÊÎÔŨÀÈÌÒÙÃẼĨÕŨ\s]$/
+
+        if(reg.test(palavra)) {
+            let arrTentativa = tipoAleat.toLowerCase().split('')
+
+            let posPalavra = arrTentativa.indexOf(palavra.toLowerCase())
+            let posPalavraAdd = []
+
+            for(let item = 0;item < arrTentativa.length;item++) {
+                if(arrTentativa[item] == palavra) {
+                    posPalavraAdd.push(item)
+                }
+            }
+
+            if(posPalavra != -1) {
+                addLetraCerta(containerPalavra, palavra, posPalavraAdd, arrTentativa)
+            }
+
+            else {
+                inputTentativa.value = ''
+                inputTentativa.focus()
+                alert('Letra errada')
+            }
+
+            let numTentativas = document.querySelector('.container-tentativas > p > span')
+            let listaInputs = document.querySelector('.container-resp').childNodes
+
+            if(numTentativas.innerHTML > 1) {
+                numTentativas.innerHTML -= 1
+            } else if(numTentativas.innerHTML <= 1) {
+                perdeuPorTentativas() // fazer perdeuPor tentativa, passar o listaInputs pro perdeu, fazer perdeu pelo tempo que acabou, dar a opção de no ultimo chute tentar chutar a palavra inteira
+            }
+        }
+        
+        else {
+            inputTentativa.focus()
+            inputTentativa.value = ''
+            alert('Não é permitido numero ou caractere especial')
+        }
+    }
+
+    btnJogada.addEventListener('click', validarJogada)
+}
+
+function diminuirTentativas(tipoAleat) {
+    let numTentativas = document.querySelector('.container-tentativas > p > span')
+    numTentativas.innerHTML = tipoAleat.length - 2   
+}
+
 function addTipo(posTema, palavras) {
-    let tipoAleatorio = palavras[posTema].tipo
-    console.log(tipoAleatorio)
+    let tipoTema = palavras[posTema].tipo
+    let tipoAleat = tipoTema[Math.floor(Math.random() * tipoTema.length)]
+
+    let containerPalavra = document.querySelector('.container-resp')
+
+    for(let pos = 0;pos < tipoAleat.length;pos++) {
+        let palavraTipoAleat = document.createElement('input')
+        palavraTipoAleat.setAttribute('type', 'text')
+        palavraTipoAleat.setAttribute('maxlength', '0')
+
+        containerPalavra.appendChild(palavraTipoAleat)
+    }
+
+    jogada(containerPalavra, tipoAleat)
+    diminuirTentativas(tipoAleat)
 }
 
 function adicionarTemaTipo(palavras) {
@@ -66,13 +150,9 @@ function adicionarTemaTipo(palavras) {
     containerTema.appendChild(tema)
 }
 
-function adicionarTentativas(tentativas) {
+function adicionarTentativas(tentativas) { // !!
     let containTent = document.querySelector('.container-tentativas > p')
     let tent = document.createElement('span')
-
-    quantTent = tentativas
-
-    tent.innerHTML = quantTent
 
     containTent.appendChild(tent)
 }
@@ -83,14 +163,15 @@ function game() {
         {tema: 'Pais', tipo: ['Afeganistão', 'Bélgica', 'Brasil', 'Camarões', 'Emirados Árabes Unidos']}
     ]
 
+    adicionarTentativas()
     adicionarTemaTipo(palavras)
-    adicionarTentativas(8)
 }
 
 function inicio() {
     click++
 
     if(click == 1) {
+        btnInicio.style.display = 'none'
         contador(1, 0)
         game()
     }
