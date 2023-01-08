@@ -43,6 +43,17 @@ function contador(min, sec) {
             containSec1.innerHTML = Number(newSec1)
             containSec2.innerHTML = Number(newSec2)
         }
+
+        if(minAtual == 0 && secAtual == 0) {
+            alert('Seu tempo acabou')
+
+            let containerPalavra = document.querySelector('.container-resp')
+            let inputList = containerPalavra.childNodes
+
+            for(let i = 3;i < inputList.length;i++) { // Resetar pro começo
+                inputList[i].setAttribute('readyonly', 'true')
+            }
+        }
     }
 
     let interval = setInterval(timer, 1000)
@@ -60,6 +71,48 @@ function addLetraCerta(containerPalavra, letra, posPalavraAdd, arrTentativa) {
     }
 }
 
+function chutarApalavra(listaInputs, inputTentativa, btnJogada, tipoAleat) {
+    alert('Você tem apenas 1 chance, chute a palavra certa')
+    inputTentativa.setAttribute('readonly', 'true')
+    btnJogada.setAttribute('disabled', 'true')
+
+    for(let i = 3;i < listaInputs.length;i++) {
+        listaInputs[i].value == '' ? listaInputs[i].setAttribute('maxlength', '1') : listaInputs[i].setAttribute('readonly', 'true')
+    }
+
+    let estruturaForca = document.querySelector('.estrutura-forca')
+    let btnUltimaTent = document.createElement('button')
+    btnUltimaTent.innerHTML = 'Chutar'
+
+    let tamanPalavra = listaInputs.length * 43
+    console.log(tamanPalavra)
+
+    btnUltimaTent.style.left = tamanPalavra + 'px'
+
+    let click = 0
+    function verifChute() {
+        click++
+
+        if(click == 1) {
+            let palavra = ''
+            
+            for(let i = 3;i < listaInputs.length;i++) {
+                palavra += listaInputs[i].value
+            }
+
+            if(palavra == tipoAleat.toLowerCase()) {
+                alert('Parabens vc acertou')
+            } else {
+                alert(`A palavra esta... ERRADA, a palavra certa é ${tipoAleat.toLowerCase()}`)
+            }
+        }
+    }
+
+    btnUltimaTent.addEventListener('click', verifChute)
+
+    estruturaForca.appendChild(btnUltimaTent)
+}
+
 function jogada(containerPalavra, tipoAleat) {
     let inputTentativa = document.getElementById('input-tentativa')
     inputTentativa.removeAttribute('disabled')
@@ -73,6 +126,9 @@ function jogada(containerPalavra, tipoAleat) {
         let reg = /^[a-zA-ZáéíóúâêîôũàèìòùãẽĩõũÁÉÍÓÚÂÊÎÔŨÀÈÌÒÙÃẼĨÕŨ\s]$/
 
         if(reg.test(palavra)) {
+            inputTentativa.value = ''
+            inputTentativa.focus()
+
             let arrTentativa = tipoAleat.toLowerCase().split('')
 
             let posPalavra = arrTentativa.indexOf(palavra.toLowerCase())
@@ -89,8 +145,6 @@ function jogada(containerPalavra, tipoAleat) {
             }
 
             else {
-                inputTentativa.value = ''
-                inputTentativa.focus()
                 alert('Letra errada')
             }
 
@@ -100,7 +154,8 @@ function jogada(containerPalavra, tipoAleat) {
             if(numTentativas.innerHTML > 1) {
                 numTentativas.innerHTML -= 1
             } else if(numTentativas.innerHTML <= 1) {
-                perdeuPorTentativas() // fazer perdeuPor tentativa, passar o listaInputs pro perdeu, fazer perdeu pelo tempo que acabou, dar a opção de no ultimo chute tentar chutar a palavra inteira
+                chutarApalavra(listaInputs, inputTentativa, btnJogada, tipoAleat)
+                /* perdeuPorTentativas() */ // fazer perdeuPor tentativa, passar o listaInputs pro perdeu, fazer perdeu pelo tempo que acabou, dar a opção de no ultimo chute tentar chutar a palavra inteira
             }
         }
         
