@@ -71,13 +71,17 @@ function addLetraCerta(containerPalavra, letra, posPalavraAdd, arrTentativa) {
     }
 }
 
-function chutarApalavra(listaInputs, inputTentativa, btnJogada, tipoAleat) {
+function chutarPalavra(listaInputs, inputTentativa, btnJogada, tipoAleat) {
     alert('Você tem apenas 1 chance, chute a palavra certa')
     inputTentativa.setAttribute('readonly', 'true')
     btnJogada.setAttribute('disabled', 'true')
 
     for(let i = 3;i < listaInputs.length;i++) {
-        listaInputs[i].value == '' ? listaInputs[i].setAttribute('maxlength', '1') : listaInputs[i].setAttribute('readonly', 'true')
+        if(listaInputs[i].value == '') {
+            listaInputs[i].setAttribute('maxlength', '1')
+        } else {
+            listaInputs[i].setAttribute('readonly', 'true')
+        }
     }
 
     let estruturaForca = document.querySelector('.estrutura-forca')
@@ -85,7 +89,6 @@ function chutarApalavra(listaInputs, inputTentativa, btnJogada, tipoAleat) {
     btnUltimaTent.innerHTML = 'Chutar'
 
     let tamanPalavra = listaInputs.length * 43
-    console.log(tamanPalavra)
 
     btnUltimaTent.style.left = tamanPalavra + 'px'
 
@@ -103,12 +106,28 @@ function chutarApalavra(listaInputs, inputTentativa, btnJogada, tipoAleat) {
             if(palavra == tipoAleat.toLowerCase()) {
                 alert('Parabens vc acertou')
             } else {
-                alert(`A palavra esta... ERRADA, a palavra certa é ${tipoAleat.toLowerCase()}`)
+                alert(`A palavra esta... ERRADA, a palavra certa é "${tipoAleat.toLowerCase()}"`)
             }
         }
     }
 
-    btnUltimaTent.addEventListener('click', verifChute)
+    function aprovChute() {
+        aprov = true
+
+        for(let i = 3;i < listaInputs.length;i++) {
+            if(listaInputs[i].value == '' || listaInputs[i].value == undefined) {
+                aprov = false
+            }
+        }
+
+        if(aprov == false) {
+            alert('Tente chutar algo ou completar a palavra')
+        } else {
+            verifChute()
+        }
+    }
+
+    btnUltimaTent.addEventListener('click', aprovChute)
 
     estruturaForca.appendChild(btnUltimaTent)
 }
@@ -121,9 +140,28 @@ function jogada(containerPalavra, tipoAleat) {
     let btnJogada = document.getElementById('btn-jogada')
     btnJogada.removeAttribute('disabled')
 
+    let nxt = 0
+
     function validarJogada() {
         let palavra = inputTentativa.value
         let reg = /^[a-zA-ZáéíóúâêîôũàèìòùãẽĩõũÁÉÍÓÚÂÊÎÔŨÀÈÌÒÙÃẼĨÕŨ\s]$/
+
+        let listaInputs = document.querySelector('.container-resp').childNodes
+
+            let letra = []
+
+            for(let item of listaInputs) {
+                if(reg.test(item.value)) {
+                    letra.push(item.value)
+                }
+            }
+
+            console.log(letra)
+
+            if(letra.length == listaInputs.length-3) {
+                alert('Parabens! Você desvendou a palavra')
+                console.log(letra.length)
+            }
 
         if(reg.test(palavra)) {
             inputTentativa.value = ''
@@ -134,6 +172,8 @@ function jogada(containerPalavra, tipoAleat) {
             let posPalavra = arrTentativa.indexOf(palavra.toLowerCase())
             let posPalavraAdd = []
 
+            let listaInputs = document.querySelector('.container-resp').childNodes
+
             for(let item = 0;item < arrTentativa.length;item++) {
                 if(arrTentativa[item] == palavra) {
                     posPalavraAdd.push(item)
@@ -142,20 +182,57 @@ function jogada(containerPalavra, tipoAleat) {
 
             if(posPalavra != -1) {
                 addLetraCerta(containerPalavra, palavra, posPalavraAdd, arrTentativa)
+
+                let letra = []
+
+                for(let item of listaInputs) {
+                    if(reg.test(item.value)) {
+                        letra.push(item.value)
+                    }
+                }
+
+                if(letra.length == listaInputs.length-3) {
+                    alert('Parabens! Você desvendou a palavra')
+                }
             }
 
             else {
+                nxt++
                 alert('Letra errada')
+                let sprites = ['spr-1.png', 'spr-2.png', 'spr-3.png', 'spr-4.png', 'spr-5.png', 'spr-6.png', 'spr-7.png', 'spr-8.png', 'spr-9.png', 'spr-10.png', 'spr-11.png', 'spr-12.png',]
+
+                if(nxt <= sprites.length) {
+                    let img = document.querySelector('.container-forca > img')
+                    img.src = './img/spritesTipo-01/spr-' + nxt + '.png'   
+                }
+
+                let containerLetraErrada = document.querySelector('.cimiterio')
+                let letraErrada = document.createElement('p')
+
+                if(nxt == 1) {
+                    letraErrada.innerHTML += palavra
+                    containerLetraErrada.appendChild(letraErrada)
+                } else {
+                    let nodeLetraErrada = containerLetraErrada.childNodes
+                    let arrLetraErrada = []
+
+                    for(let item of nodeLetraErrada) {
+                        arrLetraErrada.push(item.innerHTML)
+                    }
+
+                    if(arrLetraErrada.indexOf(palavra) == -1) {
+                        letraErrada.innerHTML += palavra
+                        containerLetraErrada.appendChild(letraErrada)
+                    }
+                }
             }
 
             let numTentativas = document.querySelector('.container-tentativas > p > span')
-            let listaInputs = document.querySelector('.container-resp').childNodes
 
             if(numTentativas.innerHTML > 1) {
                 numTentativas.innerHTML -= 1
             } else if(numTentativas.innerHTML <= 1) {
-                chutarApalavra(listaInputs, inputTentativa, btnJogada, tipoAleat)
-                /* perdeuPorTentativas() */ // fazer perdeuPor tentativa, passar o listaInputs pro perdeu, fazer perdeu pelo tempo que acabou, dar a opção de no ultimo chute tentar chutar a palavra inteira
+                chutarPalavra(listaInputs, inputTentativa, btnJogada, tipoAleat)
             }
         }
         
@@ -171,7 +248,7 @@ function jogada(containerPalavra, tipoAleat) {
 
 function diminuirTentativas(tipoAleat) {
     let numTentativas = document.querySelector('.container-tentativas > p > span')
-    numTentativas.innerHTML = tipoAleat.length - 2   
+    numTentativas.innerHTML = 12 //tipoAleat.length - 2
 }
 
 function addTipo(posTema, palavras) {
@@ -237,3 +314,5 @@ function inicio() {
 }
 
 btnInicio.addEventListener('click', inicio)
+// botar a opção de reiniciar ou desistir // msg na tela: quer desistir? quer reinicar? prompt?
+// quando reinirar ou desistir dizer qual era a palavra

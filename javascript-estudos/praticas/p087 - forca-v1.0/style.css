@@ -28,7 +28,7 @@
     padding: 10px 25px;
 
     position: absolute;
-    bottom: 225px;
+    bottom: 205px;
 
     font-size: 1.2em;
     font-weight: bold;
@@ -56,7 +56,7 @@
     max-width: 1000px;
     position: absolute;
     left: 120px;
-    top: 309px;
+    top: 340px;
 
     display: flex;
     align-items: baseline;
@@ -244,5 +244,9 @@
     font-weight: bold;
 
     color: white;
-    /* border: 1px solid white; */
+    border: 1px solid white;
+}
+
+.cimiterio > p + p {
+    margin-left: 3px;
 }
