@@ -5,19 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            height: 100vh;
+        }
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        section > div:first-child {
+            width: 350px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: gray;
+        }
+        section > div:first-child > button {
+            width: 180px;
+            height: 40px;
+            font-size: 1.1em;
+            border: 2px solid rgb(78, 78, 78);
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+        section > button {
+            width: 150px;
+            height: 40px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            background-color: blue;
+        }
+
+        section > div:last-child {
+            width: 350px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: gray;
+        } 
+
+        section > div:last-child > button {
+            width: 180px;
+            height: 40px;
+            font-size: 1.1em;
+            border: 2px solid rgb(78, 78, 78);
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
-    <form id="j" style="background-color: red;">
-        <input type="text" value="f">
-        <input type="number">
-    </form>
+    <section>
+        <div id="cx1">
+            <button>HTML</button>
+            <button>CSS</button>
+            <button>Javascript</button>
+            <button>PHP</button>
+            <button>React</button>
+            <button>MySQL</button>
+        </div>
 
-    <form>
-        <input type="email" name="" id="">
-        <input type="button" value="">
-    </form>
+        <button id="btn-copiar">Copiar -></button>
+
+        <div id="cx2"></div>
+    </section>
+
     <script src="./codigo.js"></script>
 </body>
 </html>
+<!-- /Documentos/JavaScript/javascript-estudos/praticas/p089 -->
