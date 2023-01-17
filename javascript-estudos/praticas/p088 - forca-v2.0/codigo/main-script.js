@@ -15,6 +15,11 @@ function executar() {
 
     let btnChute = document.querySelector('#btn-chute')
 
+    let cimiterio = document.querySelector('#container-letras_erradas > div')
+
+    let validPalavra = /^[a-zA-ZáéíóúâêîôũàèìòùãẽĩõũÁÉÍÓÚÂÊÎÔŨÀÈÌÒÙÃẼĨÕŨ\s]$/
+
+
     let telas = document.querySelector('#telas')
 
     let containerPerca = document.querySelector('#container-tela')
@@ -51,6 +56,32 @@ function executar() {
         txtPerca.style.cssText = `${anima} color: ${cor};`
         imgPerca.style.cssText = `${anima}`
         btnPerca.style.cssText = `${anima} background-color: ${cor};`
+    }
+
+    function msgUltimaTentativa() {
+        let blocoMsg = document.querySelector('.bloco-msg-ultima_chance')
+        blocoMsg.style.cssText = `animation: aparição 4.5s ease-in-out;`
+
+        let containerMsg = document.createElement('div')
+        containerMsg.setAttribute('class', 'container-msg')
+
+        let txtultimaChance = document.createElement('p')
+        txtultimaChance.innerHTML = 'Você usou todas as suas chances <br> Agora tente acertar a palavra completa'
+
+        containerMsg.appendChild(txtultimaChance)
+        blocoMsg.appendChild(containerMsg)
+    }
+
+    function msgAviso(msg) {
+        let contTelaLetra_errada = document.querySelector('.container-tela-letra_errada')
+        let txtAviso = document.querySelector('.container-tela-letra_errada > p')
+        txtAviso.innerHTML = msg
+
+        contTelaLetra_errada.removeAttribute('style')
+
+        setTimeout(function() {
+            contTelaLetra_errada.style.cssText = `animation: aviso-letra_errada 1.8s ease-in;`
+        },100)
     }
 
     let transicaoMenu = ((blocoMenu) => {
@@ -134,15 +165,58 @@ function executar() {
 
     let listaInput = document.querySelectorAll('#container-palavra > input')
     let next = 0
+    let click = 0
     let tentativas = 6
+
+    let validarPalavra = () => {
+        let aprov = true
+        let msg = 'Palavra não completa'
+
+        for(let input of listaInput){
+            if(input.value == '' || input.value == undefined) {
+                aprov = false
+            } else if(!validPalavra.test(input.value)) {
+                aprov = false
+                msg = 'Algum caracter invalido'
+                input.focus()
+            }
+        }
+
+        if(aprov == false) { //tem errado - palavra não completa
+            msgAviso(msg)
+
+            if(msg == 'Palavra não completa') {
+                for(let input of listaInput) {
+                    if(input.value == '' || input.value == undefined) {
+                        input.focus()
+                        break
+                    }
+                }
+            }
+        } else { //não tem errado
+            click++
+
+            if(click == 1) {
+                let palavraJunta = ''
+
+                for(let input of listaInput) {
+                    palavraJunta += input.value
+                }
+
+                if(palavraJunta == tipoAleatorio) { // ganhou
+                    presetMsgFim('animation: treme-letra .4s ease .5s 3;', 'Você ganhou!', `Parabens!! Você chutou a palavra certa. "${tipoAleatorio}"`, './img/winner-3.png', 'blue')
+                } else { // nao gnahou
+                    presetMsgFim('animation: pisca-letra 1.3s cubic-bezier(0.16, 1, 0.3, 1) .5s 3;', 'Você perdeu!', `Você chutou a palavra errada, a palavra certa era "${tipoAleatorio}"`, './img/loser-2.png', 'red')
+                }
+            }
+        }
+    } // ver se ja terminou tudo, dar uma arrumada no css ou codigo caso seja necessario e partir pro modelo de cell
 
     let validarChute = () => {
         let palavraChute = inputChute.value.toLowerCase()
 
         inputChute.value = ''
         inputChute.focus()
-
-        let validPalavra = /^[a-zA-ZáéíóúâêîôũàèìòùãẽĩõũÁÉÍÓÚÂÊÎÔŨÀÈÌÒÙÃẼĨÕŨ\s]$/
 
         if(validPalavra.test(palavraChute)) {
             let listaLetrasTipo = tipoAleatorio.split('')
@@ -174,17 +248,12 @@ function executar() {
                 }
 
                 if(confirmLetra.length == listaInput.length) {
-                    presetMsgFim('animation: treme-letra .4s ease .5s 3;', 'Você ganhou!', 'Parabens!! Você acertou todas as letras da palavra', './img/winner-3.png', 'blue')
+                    presetMsgFim('animation: treme-letra .4s ease .5s 3;', 'Você ganhou!', `Parabens!! Você acertou todas as letras de "${tipoAleatorio}"`, './img/winner-3.png', 'blue')
                 }
             } else {
                 next++
 
-                let contTelaLetra_errada = document.querySelector('.container-tela-letra_errada')
-                contTelaLetra_errada.style.cssText = `animation: aviso-letra_errada 2.3s ease-in;`
-
-                setTimeout(function() {
-                    contTelaLetra_errada.removeAttribute('style')
-                },1000)
+                msgAviso('Letra errada')
 
                 let spritesForca = ['spr_forca-1.png', 'spr_forca-2.png', 'spr_forca-3.png', 'spr_forca-4.png', 'spr_forca-5.png', 'spr_forca-6.png'] 
                 let sprites = ['sprite-2.png', 'sprite-3.png', 'sprite-4.png', 'sprite-5.png', 'sprite-6.png']
@@ -192,6 +261,7 @@ function executar() {
                 if(next <= spritesForca.length) {
                     imgForca.src = './img/spr_forca/spr_forca-' + next + '.png'
                 }
+
                 if(next < sprites.length+1) {
                     imgBoneco.src = './img/sprites/sprite-' + (next+1) + '.png' //4
                     if(next >= 4 && next <= 6) {
@@ -204,9 +274,8 @@ function executar() {
                 if(tentativas > 1) {
                     tentativas--
                 } else {
-                    /* alert('Você desperdiçou suas chances. Tente acertar a palavra completa') */
-
-                    
+                    msgUltimaTentativa()
+                    inputChute.setAttribute('disabled', 'true')
 
                     let posSemLetra
                     
@@ -227,8 +296,33 @@ function executar() {
                         }
                     }
                     listaInput[posSemLetra].focus()
+
+                    btnChute.removeEventListener('click', validarChute)
+                    btnChute.addEventListener('click', validarPalavra)
+                    btnChute.innerHTML = 'Chutar palavra'
+                }
+
+                let contLetra_errada = document.createElement('p')
+
+                if(next == 1) {
+                    contLetra_errada.innerHTML += palavraChute
+                    cimiterio.appendChild(contLetra_errada)
+                } else {
+                    let p_letras_erradas = cimiterio.childNodes
+                    let conteudoLetras_erradas = []
+
+                    for(let item of p_letras_erradas) {
+                        conteudoLetras_erradas.push(item.innerHTML)
+                    }
+
+                    if(conteudoLetras_erradas.indexOf(palavraChute) == -1) {
+                        contLetra_errada.innerHTML += palavraChute
+                        cimiterio.appendChild(contLetra_errada)
+                    }
                 }
             }
+        } else {
+            msgAviso('Caractere invalido')
         }
     }
     btnChute.addEventListener('click', validarChute)
