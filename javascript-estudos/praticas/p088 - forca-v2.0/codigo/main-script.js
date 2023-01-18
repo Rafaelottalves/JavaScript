@@ -16,10 +16,7 @@ function executar() {
     let btnChute = document.querySelector('#btn-chute')
     let btnDesistir = document.querySelector('#btn-desistir')
 
-    let container_btnMutar = document.querySelector('div#container-btn_volume')
     let btnMutar = document.querySelector('div#container-btn_volume i')
-
-    let audioTag = document.createElement('audio')
 
     let cimiterio = document.querySelector('#container-letras_erradas > div')
 
@@ -104,6 +101,7 @@ function executar() {
     btnMutar.addEventListener('click', mutarDesmutar)
 
     function playAudio(elPai, caminho) {
+        let audioTag = document.createElement('audio')
         audioTag.setAttribute('src', caminho)
 
         if(btnMutar.getAttribute('id') == 'volume-ativo') {
@@ -375,3 +373,4 @@ function executar() {
 
 btnComecar.addEventListener('click', executar)
 // ver se ja terminou tudo, dar uma arrumada no css ou codigo caso seja necessario e partir pro modelo de cell | botar sons
+// botao pra mutar
