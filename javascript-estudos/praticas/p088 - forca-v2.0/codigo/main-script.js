@@ -14,6 +14,12 @@ function executar() {
     let imgBoneco = document.querySelector('#img-boneco')
 
     let btnChute = document.querySelector('#btn-chute')
+    let btnDesistir = document.querySelector('#btn-desistir')
+
+    let container_btnMutar = document.querySelector('div#container-btn_volume')
+    let btnMutar = document.querySelector('div#container-btn_volume i')
+
+    let audioTag = document.createElement('audio')
 
     let cimiterio = document.querySelector('#container-letras_erradas > div')
 
@@ -27,6 +33,8 @@ function executar() {
     let txtPerca = document.querySelector('div#container-tela p')
     let imgPerca = document.querySelector('div#container-tela img')
     let btnPerca = document.querySelector('div#container-tela button')
+
+    let blocoMsg = document.querySelector('.bloco-msg-ultima_chance')
 
     let palavras = [
         {tema: 'Animal', tipo: ['baleia','caranguejo', 'elefante', 'flamingo', 'gato', 'hipopótamo']},
@@ -59,7 +67,6 @@ function executar() {
     }
 
     function msgUltimaTentativa() {
-        let blocoMsg = document.querySelector('.bloco-msg-ultima_chance')
         blocoMsg.style.cssText = `animation: aparição 4.5s ease-in-out;`
 
         let containerMsg = document.createElement('div')
@@ -81,7 +88,31 @@ function executar() {
 
         setTimeout(function() {
             contTelaLetra_errada.style.cssText = `animation: aviso-letra_errada 1.8s ease-in;`
+            setTimeout(function() {playAudio(contTelaLetra_errada,'./sons/wrong-2.mp3')}, 300)
         },100)
+    }
+
+    let mutarDesmutar = () => {
+        if(btnMutar.getAttribute('id') == 'volume-ativo') {
+            btnMutar.removeAttribute('id', 'volume-ativo')
+            btnMutar.setAttribute('class', 'fa-solid fa-volume-xmark')
+        } else {
+            btnMutar.setAttribute('id', 'volume-ativo')
+            btnMutar.setAttribute('class', 'fa-solid fa-volume-high')
+        }
+    }
+    btnMutar.addEventListener('click', mutarDesmutar)
+
+    function playAudio(elPai, caminho) {
+        audioTag.setAttribute('src', caminho)
+
+        if(btnMutar.getAttribute('id') == 'volume-ativo') {
+            audioTag.setAttribute('autoplay', 'true')
+        } else {
+            audioTag.removeAttribute('autoplay', 'true')
+        }
+
+        elPai.appendChild(audioTag)
     }
 
     let transicaoMenu = ((blocoMenu) => {
@@ -89,8 +120,8 @@ function executar() {
     })(blocoMenu)
 
     let contador = (() => {
-        let minuto = 2
-        let segundo = 5
+        let minuto = 1
+        let segundo = 00
 
         let interval = setInterval(function() {
             segundo--
@@ -127,7 +158,7 @@ function executar() {
             }
 
             if(minuto == 0 && segundo == 0) {
-                let anima = 'animation: pisca-letra 1.3s cubic-bezier(0.16, 1, 0.3, 1) .5s 3;'
+                let anima = 'animation: pisca-letra 1.3s cubic-bezier(0.16, 1, 0.3, 1) .5s 2;'
                 document.querySelector('#palavra-certa').innerHTML = `"${tipoAleatorio}"`
 
                 telas.style.top = '0'
@@ -137,6 +168,8 @@ function executar() {
                 txtPerca.style.cssText = `${anima}`
                 imgPerca.style.cssText = `${anima}`
                 btnPerca.style.cssText = `${anima}`
+
+                setTimeout(function() {playAudio(containerPerca, './sons/lose-3.mp3')}, 500)
             }
         }, 1000)
 
@@ -182,7 +215,7 @@ function executar() {
             }
         }
 
-        if(aprov == false) { //tem errado - palavra não completa
+        if(aprov == false) {
             msgAviso(msg)
 
             if(msg == 'Palavra não completa') {
@@ -193,7 +226,7 @@ function executar() {
                     }
                 }
             }
-        } else { //não tem errado
+        } else {
             click++
 
             if(click == 1) {
@@ -203,14 +236,18 @@ function executar() {
                     palavraJunta += input.value
                 }
 
-                if(palavraJunta == tipoAleatorio) { // ganhou
+                if(palavraJunta == tipoAleatorio) {
                     presetMsgFim('animation: treme-letra .4s ease .5s 3;', 'Você ganhou!', `Parabens!! Você chutou a palavra certa. "${tipoAleatorio}"`, './img/winner-3.png', 'blue')
-                } else { // nao gnahou
-                    presetMsgFim('animation: pisca-letra 1.3s cubic-bezier(0.16, 1, 0.3, 1) .5s 3;', 'Você perdeu!', `Você chutou a palavra errada, a palavra certa era "${tipoAleatorio}"`, './img/loser-2.png', 'red')
+                    playAudio(containerPerca, './sons/win-3.mp3')
+                } else {
+                    presetMsgFim('animation: pisca-letra 1.3s cubic-bezier(0.16, 1, 0.3, 1) .5s 2;', 'Você perdeu!', `Você chutou a palavra errada, a palavra certa era "${tipoAleatorio}"`, './img/loser-2.png', 'red')
+                    setTimeout(function() {
+                        playAudio(containerPerca, './sons/lose-3.mp3')
+                    },500)
                 }
             }
         }
-    } // ver se ja terminou tudo, dar uma arrumada no css ou codigo caso seja necessario e partir pro modelo de cell
+    }
 
     let validarChute = () => {
         let palavraChute = inputChute.value.toLowerCase()
@@ -249,6 +286,7 @@ function executar() {
 
                 if(confirmLetra.length == listaInput.length) {
                     presetMsgFim('animation: treme-letra .4s ease .5s 3;', 'Você ganhou!', `Parabens!! Você acertou todas as letras de "${tipoAleatorio}"`, './img/winner-3.png', 'blue')
+                    playAudio(containerPerca, './sons/win-3.mp3')
                 }
             } else {
                 next++
@@ -275,6 +313,8 @@ function executar() {
                     tentativas--
                 } else {
                     msgUltimaTentativa()
+                    playAudio(blocoMsg, './sons/plim.mp3')
+
                     inputChute.setAttribute('disabled', 'true')
 
                     let posSemLetra
@@ -326,6 +366,13 @@ function executar() {
         }
     }
     btnChute.addEventListener('click', validarChute)
+
+    let desistir = () => {
+        location.reload()
+    }
+    btnDesistir.addEventListener('click', desistir)
 }
 
 btnComecar.addEventListener('click', executar)
+// ver se ja terminou tudo, dar uma arrumada no css ou codigo caso seja necessario e partir pro modelo de cell | botar sons
+// botao pra mutar

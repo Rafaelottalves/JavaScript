@@ -9,6 +9,18 @@ div#bottom {
     gap: 20px;
 }
 
+div#container-btn_volume {
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+}
+
+div#container-btn_volume i {
+    font-size: 1.3em;
+    cursor: pointer;
+    color: rgba(209, 209, 209, 0.582);
+}
+
 div#container-btn_desistir {
     display: flex;
     align-items: center;
