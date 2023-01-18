@@ -375,4 +375,3 @@ function executar() {
 
 btnComecar.addEventListener('click', executar)
 // ver se ja terminou tudo, dar uma arrumada no css ou codigo caso seja necessario e partir pro modelo de cell | botar sons
-// botao pra mutar
