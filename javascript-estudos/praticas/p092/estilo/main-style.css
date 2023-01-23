@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@import url('./reset.css');
+@import url('./menu-style.css');
+@import url('./tela-style.css');
+
+#fundo {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: #260705;
+}
+
+#tabela {
+    text-align: center;
+    font-size: 2.5em;
+
+    border-collapse: collapse;
+}
+
+#tabela tr + tr {
+    border-top: 2px solid white;
+}
+
+#tabela td {
+    width: 90px;
+    height: 90px;
+}
+
+#tabela td + td {
+    border-left: 2px solid white;
+}
+
+#msg-maquina {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}

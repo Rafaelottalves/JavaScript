@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/main-style.css">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <section id="menu">
+        <div id="container-conteudo">
+            <div id="container-cadastro">
+                <div>
+                    <h2>p1</h2>
+                    <input type="text" id="p1" maxlength="18" placeholder="Nome jogador 1">
+                </div>
+                <div>
+                    <h2>p2</h2>
+                    <input type="text" id="p2" maxlength="18" placeholder="Nome jogador 2">
+                </div>
+            </div>
+
+            <h1>Jogo da Velha</h1>
+
+            <button>Começar</button>
+
+            <p>O "p1" começa</p>
+        </div>
+    </section>
+
+    <section id="fundo">
+        <section id="container-estrutura">
+            <table id="tabela">
+                <tr>
+                    <td class="cantoSuperior-esquerdo"></td>
+                    <td class="superior-meio"></td>
+                    <td class="cantoSuperior-direito"></td>
+                </tr>
+
+                <tr>
+                    <td class="meio-esquerdo"></td>
+                    <td class="meio"></td>
+                    <td class="meio-direito"></td>
+                </tr>
+
+                <tr>
+                    <td class="cantoInferior-esquerdo"></td>
+                    <td class="inferior-meio"></td>
+                    <td class="cantoInferior-direito"></td>
+                </tr>
+            </table>
+
+            <p id="msg-maquina"></p>
+        </section>
+    </section>
+
+    <section id="container-tela">
+        <div id="tela">
+            
+        </div>
+    </section>
+
+    <script src="./codigo/menu-script.js"></script>
+    <script src="./codigo/main-script.js" type="module"></script>
+</body>
+</html>
+<!-- flapbird -->
