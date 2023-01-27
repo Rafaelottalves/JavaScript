@@ -12,7 +12,9 @@ let posJogadorX, posJogadorY, posCpuX, posCpuY
 let dirJy
 
 let posJogIniY = 180
+let posJogadorIniX = 20
 let posCpuIniY= 180
+let posCpuIniX = 920
 let posBolaIniX = 475
 let posBolaIniY = 240
 
@@ -38,13 +40,72 @@ let jogo = false
 function controlaJog() {
     if(jogo) {
         posJogadorY += velJogador * dirJy
+
+        if(posJogadorY + barraH >= campoH || posJogadorY <= 0) {
+            posJogadorY += (velJogador * dirJy) * -1
+        }
         jogador.style.top = posJogadorY + 'px'
     }
 }
 
+function controlaBola() {
+    posBolaY += velBola * bolaY
+    posBolaX += velBola * bolaX
+
+    if(posBolaX <= posJogadorX+barraW && posBolaY+bolaH >= posJogadorY && posBolaY <= posJogadorY+barraH) {
+        bolaY = ( (posBolaY + (bolaH/2)) - (posJogadorY + (barraH/2)) ) / 16
+        bolaX *= -1
+    }
+
+    if(posBolaX >= posCpuX-barraW && posBolaY+bolaH >= posCpuY && posBolaY <= posCpuY+barraH) {
+        bolaY = ( (posBolaY + (bolaH/2)) - (posCpuY + (barraH/2)) ) / 16
+        bolaX *= -1
+    }
+
+    if(posBolaY >= 480 ||  posBolaY <= 0) {
+        bolaY *= -1 
+    }
+
+    if(posBolaX >= (campoW-bolaW)) {
+        velBola = 0
+
+        posBolaX = posBolaIniX
+        posBolaY = posBolaIniY
+
+        posJogadorY = posJogIniY
+        jogador.style.top = posJogadorY + 'px'
+
+        posCpuY = posCpuIniY
+        cpu.style.top = posCpuY + 'px'
+        
+        ponto++
+        painelPontos.value = ponto
+
+        jogo = false
+    } else if(posBolaX <= 0) {
+        velBola = 0
+
+        posBolaX = posBolaIniX
+        posBolaY = posBolaIniY
+
+        posJogadorY = posJogIniY
+        jogador.style.top = posJogadorY + 'px'
+
+        posCpuY = posCpuIniY
+        cpu.style.top = posCpuY + 'px'
+
+        ponto--
+        painelPontos.value = ponto
+
+        jogo = false
+    }
+
+    bola.style.top = posBolaY + 'px'
+    bola.style.left = posBolaX + 'px'
+}
+
 function teclaDw(evt) {
     tecla = evt.key
-    console.log(tecla)
 
     if(tecla == 'ArrowUp') {
         dirJy = -1
@@ -56,16 +117,17 @@ function teclaDw(evt) {
 function teclaUp(evt) {
     tecla = evt.key
 
-    if(tecla == 'arrowUp') {
+    if(tecla == 'ArrowUp') {
         dirJy = 0
-    } else if(tecla == 'arrowDown') {
-        dirJy = 1
+    } else if(tecla == 'ArrowDown') {
+        dirJy = 0
     }
 }
 
 function game() {
     if(jogo) {
         controlaJog()
+        controlaBola()
     }
 
     frames = requestAnimationFrame(game)
@@ -78,12 +140,17 @@ function executaGame() {
 
         dirJy = 0
         
+        bolaY = 0
+        Math.random() * 10 < 5 ? bolaX = -1 : bolaX = 1
+
         posBolaX = posBolaIniX
         posBolaY = posBolaIniY
 
         posJogadorY = posJogIniY
+        posJogadorX = posJogadorIniX
 
         posCpuY = posCpuIniY
+        posCpuX = posCpuIniX
 
         velBola = velCpu = velJogador = 8
 
