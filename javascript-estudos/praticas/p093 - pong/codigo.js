@@ -37,6 +37,29 @@ let ponto = 0
 let tecla
 let jogo = false
 
+function controlaCpu() {
+    if(jogo) {
+        if(posBolaX > (campoW / 2) && bolaX > 0) {
+            if(posBolaY + (bolaH / 2) > posCpuY + (barraH / 2) + velCpu) {
+                if(posCpuY + barraH <= campoH) {
+                    posCpuY += velCpu
+                }
+            } else if(posBolaY + (bolaH / 2) < posCpuY + (barraH / 2) - velCpu) {
+                if(posCpuY >= 0) {
+                    posCpuY -= velCpu
+                }
+            }
+        } else {
+            if(posCpuY + (barraH / 2) < campoH / 2) {
+                posCpuY += velCpu
+            } else if(posCpuY + (barraH / 2) > campoH / 2) {
+                posCpuY -= velCpu
+            }
+        }
+        cpu.style.top = posCpuY + 'px'
+    }
+}
+
 function controlaJog() {
     if(jogo) {
         posJogadorY += velJogador * dirJy
@@ -77,7 +100,7 @@ function controlaBola() {
 
         posCpuY = posCpuIniY
         cpu.style.top = posCpuY + 'px'
-        
+
         ponto++
         painelPontos.value = ponto
 
@@ -128,6 +151,7 @@ function game() {
     if(jogo) {
         controlaJog()
         controlaBola()
+        controlaCpu()
     }
 
     frames = requestAnimationFrame(game)
