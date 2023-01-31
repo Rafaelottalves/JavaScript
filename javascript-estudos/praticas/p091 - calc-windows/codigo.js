@@ -1,6 +1,3 @@
-//AGORA: fazer os projetos de todos os cursos (e talvez outros que não estejam)
-// depois fazer desafios no codewars
-
 const previousOperationText = document.querySelector('#previous-operation')
 const currentOperationText = document.querySelector('#current-operation')
 

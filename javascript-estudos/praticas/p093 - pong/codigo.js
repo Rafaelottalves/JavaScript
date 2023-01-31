@@ -79,7 +79,7 @@ function controlaBola() {
         bolaY = ( (posBolaY + (bolaH/2)) - (posJogadorY + (barraH/2)) ) / 16
         bolaX *= -1
     }
-
+    
     if(posBolaX >= posCpuX-barraW && posBolaY+bolaH >= posCpuY && posBolaY <= posCpuY+barraH) {
         bolaY = ( (posBolaY + (bolaH/2)) - (posCpuY + (barraH/2)) ) / 16
         bolaX *= -1
@@ -124,6 +124,7 @@ function controlaBola() {
     }
 
     bola.style.top = posBolaY + 'px'
+    console.log(posBolaX)
     bola.style.left = posBolaX + 'px'
 }
 
@@ -210,6 +211,9 @@ window.addEventListener('load', inicializa)
 
     function movPlataforma(evt) {
         let tecla = evt.key
+        
+        
+
         console.log(tecla)
         if(tecla == 'ArrowUp') {
             dy = -1
