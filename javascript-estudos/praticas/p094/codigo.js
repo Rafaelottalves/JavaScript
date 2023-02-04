@@ -2,4 +2,5 @@
 // em uma verificação for, para não olhar o resto digite: return (dentro da verificacao)
 // paradigmas do javascript - transições js
 // preventDefault() - geralmente é feito nos formularios
+// bibliotecas js
 
