@@ -3,5 +3,5 @@
 // paradigmas do javascript - transições js
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
-// agora atualizar -comandos gerais-
+// agora metodos tematicos
 
