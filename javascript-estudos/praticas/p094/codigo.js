@@ -4,5 +4,5 @@
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
 // agora metodos tematicos
-// ver metodos string assim: 'rafa'.
+// ver metodos objeto assim: {nome: 'rafa'}.
 
