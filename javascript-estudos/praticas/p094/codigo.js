@@ -4,5 +4,6 @@
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
 // agora metodos tematicos
-// ver metodos objeto assim: {nome: 'rafa'}.
+// vagora escolher outro tema pra metodos
+
 
