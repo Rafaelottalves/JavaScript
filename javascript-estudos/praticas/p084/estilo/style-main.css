@@ -29,8 +29,10 @@
 
 .container-desc-capa h1 {
     text-align: center;
-    font-size: 3.5em;
+    font-size: 3.4em;
     margin: 10px 0px;
+
+    font-family: 'Poppins', sans-serif;
 }
 
 .container-desc-capa h1 span {
@@ -47,8 +49,8 @@
 }
 
 .container-opcoes-capa div {
-    width: 168px;
-    height: 170px;
+    width: 166px;
+    height: 160px;
     padding: 0px 18px;
 
     cursor: pointer;
@@ -89,7 +91,7 @@
 
 .sobre {
     width: 550px;
-    height: 442px;
+    height: 430px;
     margin-right: 35px;
     background-color: red;
 }
@@ -105,6 +107,7 @@
 
 .container-img-sobre {
     width: 545px;
+    height: 430px;
 }
 
 .container-img-sobre img {

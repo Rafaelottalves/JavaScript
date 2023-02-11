@@ -3,7 +3,5 @@
 // paradigmas do javascript - transições js
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
-// agora metodos tematicos
-// vagora escolher outro tema pra metodos
 
-
+document.getElementsByTagName('body')[0].assignedSlot
