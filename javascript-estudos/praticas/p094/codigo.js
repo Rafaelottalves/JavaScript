@@ -4,4 +4,8 @@
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
 
-document.getElementsByTagName('body')[0].assignedSlot
+function verifCap() {
+    let isCap = document.getElementsByTagName('p')[0].clientWidth
+    alert(isCap)
+
+}
