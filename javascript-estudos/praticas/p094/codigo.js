@@ -3,9 +3,3 @@
 // paradigmas do javascript - transições js
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
-
-function verifCap() {
-    let isCap = document.getElementsByTagName('p')[0].clientWidth
-    alert(isCap)
-
-}
