@@ -3,3 +3,7 @@
 // paradigmas do javascript - transições js
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
+// COMO DOCUMENTar um projeto - como fazer uma documentação
+
+let div = document.getElementById('bloco')
+div.style.backgroundColor
