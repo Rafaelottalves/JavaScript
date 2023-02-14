@@ -6,4 +6,5 @@
 // COMO DOCUMENTar um projeto - como fazer uma documentação
 
 let div = document.getElementById('bloco')
-div.style.backgroundColor
+div.style.borderRightWidth
+
