@@ -6,5 +6,12 @@
 // COMO DOCUMENTar um projeto - como fazer uma documentação
 
 let div = document.getElementById('bloco')
-div.style.borderRightWidth
+div.style.counterIncrement
+
+div.style.counterReset
+div.style.counterSet
+div.style.cssFloat
+div.style.cssText
+div.style.cursor
+div.style.direction
 
