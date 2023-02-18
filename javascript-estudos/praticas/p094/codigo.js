@@ -4,15 +4,7 @@
 // preventDefault() - geralmente é feito nos formularios
 // bibliotecas js
 // COMO DOCUMENTar um projeto - como fazer uma documentação
-// adicionar, remover, alterar, alterar conteudo, valor, substituir de elementos, mexer nos elementos agora
-//3 - proprio elemento -> atributos -> conteudo
+// em volta
+//4 - proprio elemento -> atributos -> conteudo -> em volta (eventListener, removeEventListener...)
 
-let div = document.getElementById('').id
-let div = document.getElementById('')
-let div = document.getElementById('')
-let div = document.getElementById('')
-let div = document.getElementById('')
-let div = document.getElementById('')
-let div = document.getElementById('')
-let div = document.getElementById('')
-let div = document.getElementById('')
+let div = document.getElementById('').
