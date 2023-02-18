@@ -6,5 +6,3 @@
 // COMO DOCUMENTar um projeto - como fazer uma documentação
 // em volta
 //4 - proprio elemento -> atributos -> conteudo -> em volta (eventListener, removeEventListener...)
-
-let div = document.getElementById('').
