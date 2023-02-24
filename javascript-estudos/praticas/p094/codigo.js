@@ -5,14 +5,5 @@
 // COMO DOCUMENTar um projeto - como fazer uma documentação
 // em volta
 //4 - proprio elemento -> atributos -> conteudo -> em volta (eventListener, removeEventListener...)
+// [AGORA] praticar eventos!!
 
-/* let div = document.getElementById('bloco')
-
-div.addEventListener('') */
-
-/* let input = document.querySelector('input')
-input.addEventListener('blur', sai) */
-
-function sai() {
-    alert('saiuuu')
-}
