@@ -22,4 +22,3 @@ cardList.forEach((element) => {
         currentElement.classList.remove('over-effect')
     })
 })
-
