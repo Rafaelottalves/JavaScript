@@ -12,13 +12,26 @@ if(!element.classList.contains('clicked')) {
 const cardList = document.querySelectorAll('.card')
 
 cardList.forEach((element) => {
-    element.addEventListener('mouseover', (event) => {
+    element.addEventListener('click', (event) => {
         const currentElement = event.target
-        currentElement.classList.add('over-effect')
-    })
+        const parentElement = currentElement.parentNode
 
-    element.addEventListener('mouseout', (event) => {
-        const currentElement = event.target
-        currentElement.classList.remove('over-effect')
+        if(currentElement.getAttribute('src')) {
+            currentElement.style.transform = "translateY(-200px)" /* O PROBLEMA É AQUI? */
+            currentElement.style.transition = "transform 2s ease" /* AQUI? */
+
+            let verifPos = setInterval(() => {
+                let currentElementPosition = Math.round(currentElement.getBoundingClientRect().top)
+                let parentElementTop = parentElement.offsetTop
+
+                let disElements = (currentElementPosition - parentElementTop) * -1
+
+                currentElement.style.clipPath = `inset(${disElements}px 0px 0px 0px)` /* AQUI? */
+
+                if(disElements == -201) {
+                    clearInterval(verifPos)
+                }
+            }, 24) /* AQUI? */
+        }
     })
 })

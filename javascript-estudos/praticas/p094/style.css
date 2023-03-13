@@ -28,14 +28,19 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
-    gap: 3px;
+    gap: 5px;
 }
 
 .card {
     width: 150px;
     height: 200px;
 
-    border: 1px solid rgb(156, 156, 156);
+    position: relative;
+    box-shadow: 0 0px 0px 1px rgb(156, 156, 156);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     transition: .3s;
 }
@@ -45,16 +50,4 @@ body {
     height: 100%;
 
     object-fit: cover;
-}
-
-.not-clicked {
-    transform: scale(.5);
-}
-
-.clicked {
-    transform: scale(1.1);
-}
-
-.over-effect {
-    filter: brightness(30%);
 }
