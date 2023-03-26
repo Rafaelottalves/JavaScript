@@ -18,3 +18,4 @@
 
 Error() é um erro generico */
 
+/* arrumas o arquivo sobre erros e exceções (n são a mesma coisa!) -Uma exceção é um objeto de erro que foi lançado.- */
