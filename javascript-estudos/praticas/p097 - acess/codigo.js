@@ -7,7 +7,25 @@
 
 /* objeto arguments - https://www.youtube.com/watch?v=w03VD6yOh6U&ab_channel=BrazilianDev */
 
-/* erros promises e calbacks, erros customizados
-voltar a web */
-/* PRATICAR BASTANTE ERROS AGORA!! */
+
+/*voltar a web */
+
+/* destructuring */
+/* require() - get() */ 
+
+/* axios - biblioteca pra consumir API */
+
+/* webpack, babel, npm - marcar (nada a ver com agora) */
+
+/* sketch book digital - site/app?? */
+
+/* event loop */
+/* biblioteca request ja ta defasada e antiga */
+/* o axios n trabalha com callback mais porque ja ta ficando ultrapassado */
+/* Promise + loop */
+
+/* API - fetch etc.. */
+/* especificos - depurar, event loop ? */
+
+/* -------------------- */
 
