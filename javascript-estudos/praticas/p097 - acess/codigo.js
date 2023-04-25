@@ -32,3 +32,4 @@
 /* -------------------- */
 
 /* event loop - depuração - soltos - http */
+/* antes de terminar js, ir ler no site favoritado como: baixo dos panos: js  */
