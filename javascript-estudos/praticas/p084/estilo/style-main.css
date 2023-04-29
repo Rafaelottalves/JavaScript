@@ -417,15 +417,42 @@
 
 .container-topicos {
     width: 1100px;
-    height: 100px;
+    height: 34px;
 
-    margin: 0 auto;
+    margin: 20px auto;
+
 
     background-color: red;
 }
 
 .container-topicos ul {
     display: flex;
+    justify-content: center;
 
     background-color: blue;
+}
+
+.container-topicos ul li {
+    margin: 0px 2px;
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+    font-size: .9em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    background-color: purple;
+}
+
+.container-img-portfolio {
+    width: 1100px;
+    height: 1110px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    background-color: green;
 }
