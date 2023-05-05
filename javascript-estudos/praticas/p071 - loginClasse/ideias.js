@@ -6,11 +6,6 @@ const reg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%*()_+^&}{:;?.])(?:([0-9a-zA-Z]
 
 /* 
 
-// estrategia: primeiro começar a povoar minhas redes sociais, depois meu github, depois fazer meu site portfolio e por ultimo minha conta no linkedin
-
-// DEIXAR MAIS VISUAL, DEPOIS ADICIONAR MAIS FUNCIONALIDADE E DEPOIS DEIXAR AINDA MAIS VISUAL
-// outros inimigos, com nomes, o inimigo será só a base
-
 class Inimigo {
     constructor (atack, vida, recVida) {
         this.ataque = atack

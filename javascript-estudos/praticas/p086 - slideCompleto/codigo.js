@@ -1,16 +1,3 @@
-/*
-Depois estudar 'Manipulações de ... (manejo)':
-
-pagina pra adicionar projetos? sobre? tudo?
-REFATORAR - DEBUGAR?
-
-Portifolio: seção anual - meus projetos em 20... (meus projetos em 2022, meus projetos em 2023....) */
-/* 
-Ver os jogos do curso mais pra frente (pro final de tudo(escolher quando)):
- https://www.youtube.com/playlist?list=PLx4x_zx8csUj3IbPQ4_X5jis_SkCol3eC 
-*/
-// troca por botão ou modo slide
-
 let imgs = []
 let slider
 let imgAtual
