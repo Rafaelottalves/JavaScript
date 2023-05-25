@@ -16,28 +16,38 @@
 }
 
 body {
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
-.general-block {
-    width: 100%;
-
-    margin-top: 130px;
-    position: relative;
+.general-content-container {
+    width: 100vw;
+    height: 100vh;
 
     display: flex;
-    justify-content: space-around;
+    align-items: center;
 
-    /* background-color: red; */
+    position: relative;
+
+    background-color: rgb(33, 45, 50);
 }
 
-.container-info {
+.slider {
+    width: 100vw;
+    height: 300px;
+
+    display: flex;
+
+    background-color: rgb(246, 89, 89);
+}
+
+.info {
     width: 60%;
 
     padding: 50px 150px;
+    background-color: rgb(188, 47, 188);
 }
 
-.container-info h1 {
+.info h1 {
     margin-bottom: 50px;
 
     font-size: 2em;
@@ -47,7 +57,7 @@ body {
     font-weight: lighter;
 }
 
-.container-info button {
+.info button {
     padding: 30px 50px;
 
     font-size: .8em;
@@ -59,122 +69,22 @@ body {
     background-color: rgb(39, 36, 36);
 }
 
-.container-works {
+.slider-items {
     width: 40%;
-}
 
-.works {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(122, 224, 122);
 }
 
-.container-wrapper {
-    display: block;
-    position: relative;
+.item {
     padding: 0px 10px;
 }
 
-.container-wrapper img {
+.item img {
     width: 370px;
-    height: 285px;
+    height: 281px;
 
     object-fit: cover;
-}
-
-.container-wrapper figcaption {
-    position: absolute;
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.container-wrapper figcaption:nth-child(2) {
-    max-width: 335px;
-
-    display: flex;
-    flex-wrap: wrap;
-
-    left: 45px;
-    bottom: 70px;
-}
-
-.container-wrapper:nth-child(3) figcaption:nth-child(2) {
-    bottom: 100px;
-}
-
-.container-wrapper figcaption:nth-child(2) p {
-    margin-right: 23px;
-
-    font-size: .7em;
-    font-weight: bold;
-
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.5em;
-}
-
-.container-wrapper figcaption:last-child {
-    font-size: 1.6em;
-    letter-spacing: 1px;
-
-    left: 45px;
-    bottom: 35px;
-}
-
-.container-counter {
-    width: 480px;
-    height: 50px;
-
-    position: fixed;
-    right: 50px;
-    bottom: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    /* background-color: blue; */
-}
-
-.barra-estado {
-    width: 300px;
-    height: 2px;
-
-    background-color: rgb(116, 116, 116);
-}
-
-.barra-estado div {
-    width: 100px;
-    height: 100%;
-
-    transform: translateX(5px);
-
-    background-color: black;
-}
-
-.counter {
-    width: 130px;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    /* background-color: red; */
-}
-
-.counter p {
-    font-size: .78em;
-}
-
-.counter p:last-child {
-    color: rgb(116, 116, 116);
-}
-
-.counter span {
-    width: 45px;
-    height: 1px;
-
-    transform: rotate(30deg);
-
-    background-color: rgb(116, 116, 116);
 }
