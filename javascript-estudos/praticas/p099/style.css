@@ -47,6 +47,8 @@
     width: 100%;
     height: 100%;
 
+    position: absolute;
+
     object-fit: cover;
 }
 
@@ -58,7 +60,7 @@
 
     position: absolute;
     bottom: -60px;
-    z-index: 1;
+    z-index: 100;
 
     transition: .2s ease;
 }
@@ -118,7 +120,18 @@
     color: white;
 }
 
-.counter div:first-child, .counter div:last-child {
+.counter div:first-child {
+    padding: 5px 10px;
+
+    font-size: 1.4em;
+    cursor: not-allowed;
+
+    border-radius: 3px;
+
+    color: gray;
+}
+
+.counter div:last-child {
     padding: 5px 10px;
 
     font-size: 1.4em;
@@ -127,7 +140,7 @@
     border-radius: 3px;
 }
 
-.counter div:first-child:hover, .counter div:last-child:hover {
+.counter div:last-child:hover {
     background-color: rgba(255, 255, 255, 0.141);
 }
 

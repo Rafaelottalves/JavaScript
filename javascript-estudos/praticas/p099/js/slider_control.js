@@ -14,5 +14,3 @@ slider_items.addEventListener('mouseleave', hideSliderControl)
 
 slider_control.addEventListener('mouseenter', showSliderControl)
 slider_control.addEventListener('mouseleave', hideSliderControl)
-
-export { slider_items, slider_control }
