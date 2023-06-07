@@ -9,9 +9,17 @@ let item_guide = [...document.querySelectorAll('.img-guide > span')]
 let cont = 1
 let cont_img = 27
 
+let iNeg = 27
+let iPos = 0
+
+/* --------------- */
+
 function mvgRight() {
     cont++
     cont_img--
+
+    iPos++
+    iNeg--
 }
 
 function blockBtnRight() {
@@ -72,6 +80,9 @@ function changeElementsRight() {
 function mvgLeft() {
     cont--
     cont_img++
+
+    iPos--
+    iNeg++
 }
 
 function blockBtnLeft() {
@@ -117,4 +128,84 @@ function changeElementsLeft() {
     img_list[cont_img-1].style.cssText = `z-index: 0;`
 }
 
-export { mvgRight, watchingCounterRight, freeBtnLeft, eventStart, changeElementsRight, mvgLeft, watchingCounterLeft, changeElementsLeft, btn_right, btn_left }
+/* --------------- */
+
+function mvgForward() {
+    iPos++
+    iNeg--
+
+    cont = iPos+1
+    cont_img = iNeg
+}
+
+function mvgBackward() {
+    cont = iPos
+
+    iPos--
+    iNeg++
+
+    cont_img = iNeg
+}
+
+function imgGuideControl() {
+    function addClickEvent(item, index) {
+        function clickEvent() {
+            number_counter.innerHTML = index+1
+
+            if(iPos < index) {
+                freeBtnLeft()
+
+                eventStart()
+
+                while(iPos < index) {
+                    item_guide[iPos+1].style.cssText = `background-color: white;`
+
+                    if(iPos+1 == 27) {
+                        blockBtnRight()
+                    }
+
+                    img_list[iNeg].style.cssText = `z-index: 0;`
+
+                    if(iPos+1 == index) {
+                        img_list[iNeg-1].style.cssText = `z-index: 2;`
+                    }
+
+                    mvgForward()
+                }
+            } else if(iPos > index) {
+                if(iPos == 28) {
+                    iPos--
+                }
+
+                freeBtnRight()
+
+                while(iPos > index) {
+                    item_guide[iPos].style.cssText = `background-color: rgba(255, 255, 255, 0.408);`
+
+                    if(iPos == 1) {
+                        blockBtnLeft()
+
+                        eventStop()
+                    }
+
+                    img_list[iNeg].style.cssText = `z-index: 0;`
+
+                    if(iPos-1 == index) {
+                        img_list[iNeg+1].style.cssText = `z-index: 2;`
+                    }
+
+                    mvgBackward()
+                }
+
+            }
+        }
+
+        item.addEventListener('click', clickEvent)
+    }
+
+    item_guide.forEach(addClickEvent)
+}
+
+/* --------------- */
+
+export { mvgRight, watchingCounterRight, freeBtnLeft, eventStart, changeElementsRight, mvgLeft, watchingCounterLeft, changeElementsLeft, btn_right, btn_left, imgGuideControl }

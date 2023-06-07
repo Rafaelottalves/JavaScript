@@ -1,4 +1,4 @@
-import { mvgRight, watchingCounterRight, freeBtnLeft, eventStart, changeElementsRight, mvgLeft, watchingCounterLeft, changeElementsLeft, btn_right, btn_left } from "./functions.js"
+import { mvgRight, watchingCounterRight, freeBtnLeft, eventStart, changeElementsRight, mvgLeft, watchingCounterLeft, changeElementsLeft, btn_right, btn_left, imgGuideControl } from "./functions.js"
 
 function movingRight() {
     mvgRight()
@@ -19,6 +19,8 @@ function movingLeft() {
 
     changeElementsLeft()
 }
+
+imgGuideControl()
 
 btn_right.addEventListener('click', movingRight)
 btn_left.addEventListener('click', movingLeft)
