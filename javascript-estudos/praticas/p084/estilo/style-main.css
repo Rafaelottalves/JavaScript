@@ -94,8 +94,6 @@
     height: 430px;
 
     margin-right: 35px;
-
-    /* background-color: red; */
 }
 
 .sobre h2 {
@@ -139,16 +137,12 @@
 
     margin: 0 auto 30px auto;
     padding-top: 30px;
-
-    /* background-color: red; */
 }
 
 .container-clientes {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    /* background-color: blue; */
 }
 
 .container-clientes img {
@@ -170,8 +164,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
-    /* background-color: aqua; */
 }
 
 .container-marcador input {
@@ -194,8 +186,6 @@
     display: flex;
 
     margin-bottom: 50px;
-    
-    /* background-color: rgb(161, 90, 19); */
 }
 
 .container-img-features {
@@ -204,8 +194,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* background-color: rgb(115, 60, 60); */
 }
 
 .container-img-features img {
@@ -224,8 +212,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    /* background-color: azure; */
 }
 
 .bloco-features {
@@ -259,9 +245,9 @@
 }
 
 .container-info-padrao {
+    margin-top: 60px;
     margin-bottom: 50px;
     padding-left: 67px;
-    /* background-color: red; */
 }
 
 .container-info-padrao div {
@@ -420,16 +406,11 @@
     height: 34px;
 
     margin: 20px auto;
-
-
-    background-color: red;
 }
 
 .container-topicos ul {
     display: flex;
     justify-content: center;
-
-    background-color: blue;
 }
 
 .container-topicos ul li {
@@ -442,17 +423,22 @@
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
+}
 
-    background-color: purple;
+.selecionado {
+    background-color: var(--cor-primaria);
+}
+
+.container-topicos ul li:hover {
+    cursor: pointer;
+    background-color: var(--cor-primaria);
 }
 
 .container-img-portfolio {
     width: 1100px;
     height: 1110px;
 
-    margin: 0 auto;
-
-    display: grid;
+    margin: 0 auto 300px auto;
 
     background-color: green;
 }
