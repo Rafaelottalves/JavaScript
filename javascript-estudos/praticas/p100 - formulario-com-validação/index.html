@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="main-content">
+        <section class="form-area">
+            <div class="container-title">
+                <p>Sign-up</p>
+            </div>
+            
+            <form class="form">
+                <div class="container-input-form">
+                    <div class="form-section">
+                        <p>Nome</p>
+                        <input type="text" placeholder="Nome" required>
+
+                        <div class="warning-container">
+                            <span class="arrow"></span>
+
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p class="descrição"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <p>Email</p>
+                        <input type="email" id="" placeholder="Email" required>
+
+                        <div class="warning-container">
+                            <span class="arrow"></span>
+
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p class="descrição"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="password-section">
+                            <p>Senha</p>
+                            <input type="password" id="" placeholder="Senha" minlength="8" maxlength="16" required>
+
+                            <div class="warning-container">
+                                <span class="arrow"></span>
+    
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <p class="descrição"></p>
+                            </div>
+                        </div>
+
+                        <div class="password-section">
+                            <p>Confirmar Senha</p>
+                            <input type="password" id="" placeholder="Confirmação" minlength="8" maxlength="16" required>
+
+                            <div class="warning-container">
+                                <span class="arrow"></span>
+    
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <p class="descrição"></p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container-send-btn">
+                        <button>Enviar</button>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="./Assets/validation.js" type="module"></script>
+</body>
+</html>

@@ -115,6 +115,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
 }
 
 .form-section > .password-section:last-child {
@@ -151,4 +153,51 @@
 
     border-color: #b00ff5ec;
     background-color: rgba(0, 0, 0, 0.408);
+}
+
+/* Warning Style */
+
+.warning-container {
+    min-width: 205px;
+    max-width: 390px;
+    min-height: 35px;
+
+    padding: 0px 5px;
+
+    position: absolute;
+    bottom: -40px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 5px;
+    background-color: white;
+
+    z-index: -1;
+}
+
+.warning-container > .arrow {
+    position: absolute;
+    top: -8px;
+    left: 11px;
+
+    border-bottom: 8px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.warning-container > i {
+    margin-right: 5px;
+
+    font-size: 1.5em;
+    color: #FFA300;
+}
+
+.warning-container > .descrição {
+    margin-top: 5px;
+
+    font-size: .85em;
+    font-family: sans-serif;
+
+    color: black;
 }
